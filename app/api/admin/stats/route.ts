@@ -13,7 +13,7 @@ export async function GET(request: Request) {
         const today = new Date();
         const todayStr = today.toISOString().split('T')[0];
 
-        const [totalServices, appointmentsToday, totalRevenue] = await Promise.all([
+        const [totalServices, appointmentsToday] = await Promise.all([
             prisma.service.count({
                 where: { salonId }
             }),
@@ -23,16 +23,6 @@ export async function GET(request: Request) {
                     appointmentDate: todayStr
                 }
             }),
-            prisma.appointment.aggregate({
-                where: {
-                    service: { salonId }
-                },
-                _sum: {
-                    // Note: this works if we have a field to sum. 
-                    // However, the revenue is derived from service.price.
-                    // We need to join with service.
-                }
-            })
         ]);
 
         // Correct way to get revenue:
@@ -45,12 +35,12 @@ export async function GET(request: Request) {
             }
         });
 
-        const revenue = appointmentsWithService.reduce((acc, app) => acc + app.service.price, 0);
+        const totalRevenue = appointmentsWithService.reduce((acc, app) => acc + app.service.price, 0);
 
         return NextResponse.json({
             totalServices,
             appointmentsToday,
-            totalRevenue: revenue
+            totalRevenue
         }, { status: 200 });
     } catch (error) {
         console.error('Error fetching stats:', error);

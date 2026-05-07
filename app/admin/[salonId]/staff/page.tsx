@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Wrapper from '@/app/components/Wrapper'
 import Notification from '@/app/components/Notification'
-import { Trash2, Edit3, Save, X, PlusCircle, UserPlus } from 'lucide-react'
+import { Trash2, Edit3, Save, X, UserPlus } from 'lucide-react'
 
 interface StaffMember {
   id: string;
@@ -45,8 +45,8 @@ const ManageStaff = ({ params }: { params: { salonId: string } }) => {
       const data = await response.json()
       setStaff(data.staff)
       setLoading(false)
-    } catch (error) {
-      console.error(error)
+    } catch (err) {
+      console.error(err)
       setLoading(false)
     }
   }
@@ -56,8 +56,8 @@ const ManageStaff = ({ params }: { params: { salonId: string } }) => {
       const response = await fetch('/api/users')
       const data = await response.json()
       setUsers(data.users)
-    } catch (error) {
-      console.error('Error fetching users:', error)
+    } catch (err) {
+      console.error('Error fetching users:', err)
     }
   }
 
@@ -88,7 +88,7 @@ const ManageStaff = ({ params }: { params: { salonId: string } }) => {
         const result = await response.json()
         setNotification(result.message || 'Erreur lors de la création')
       }
-    } catch (error) {
+    } catch (err) {
       setNotification('Erreur serveur')
     }
   }
@@ -114,7 +114,7 @@ const ManageStaff = ({ params }: { params: { salonId: string } }) => {
       } else {
         setNotification('Erreur lors de la mise à jour')
       }
-    } catch (error) {
+    } catch (err) {
       setNotification('Erreur serveur')
     }
   }
@@ -135,7 +135,7 @@ const ManageStaff = ({ params }: { params: { salonId: string } }) => {
       } else {
         setNotification('Erreur lors de la suppression')
       }
-    } catch (error) {
+    } catch (err) {
       setNotification('Erreur serveur')
     }
   }

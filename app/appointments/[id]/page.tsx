@@ -26,7 +26,7 @@ interface ServiceData {
   salonId: string;
 }
 
-const page = ({ params }: { params: { id: string } }) => {
+const Page = ({ params }: { params: { id: string } }) => {
   const { user } = useKindeBrowserClient();
   const [selectedDate, setSelectedDate] = useState<string>('');
   const [serviceData, setServiceData] = useState<ServiceData | null>(null);
@@ -221,7 +221,7 @@ const page = ({ params }: { params: { id: string } }) => {
                     <ul className='grid grid-cols-2 gap-4 mt-4'>
                       {availableSlots.length > 0 ? (
                         availableSlots.map((slot, index) => (
-                          <button className={`btn w-full btn-md ${isSlotSelected(slot) ? 'btn-secondary' : 'btn-outline btn-ghost border border-base-300 text-gray-500 hover:bg-secondary hover:border-secondary'} `} onClick={() => handleSlotClick(slot)}>
+                          <button key={index} className={`btn w-full btn-md ${isSlotSelected(slot) ? 'btn-secondary' : 'btn-outline btn-ghost border border-base-300 text-gray-500 hover:bg-secondary hover:border-secondary'} `} onClick={() => handleSlotClick(slot)}>
                             <Clock7 className='w-4' /> {slot}
                           </button>
                         ))
@@ -255,7 +255,7 @@ const page = ({ params }: { params: { id: string } }) => {
                       <ul className='grid grid-cols-2 gap-4 mt-4'>
                         {availableSlots.length > 0 ? (
                           availableSlots.map((slot, index) => (
-                            <button className={`btn w-full btn-md ${isSlotSelected(slot) ? 'btn-secondary' : 'btn-outline btn-ghost border border-base-300 text-gray-500 hover:bg-secondary hover:border-secondary'} `} onClick={() => handleSlotClick(slot)}>
+                            <button key={index} className={`btn w-full btn-md ${isSlotSelected(slot) ? 'btn-secondary' : 'btn-outline btn-ghost border border-base-300 text-gray-500 hover:bg-secondary hover:border-secondary'} `} onClick={() => handleSlotClick(slot)}>
                               <Clock7 className='w-4' /> {slot}
                             </button>
                           ))
@@ -275,4 +275,4 @@ const page = ({ params }: { params: { id: string } }) => {
   )
 }
 
-export default page
+export default Page;

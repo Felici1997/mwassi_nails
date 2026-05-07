@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import dayjs from 'dayjs';
 
-export async function DELETE(request: Request) {
+export async function DELETE(_request: Request) {
     try {
         const now = dayjs()
 

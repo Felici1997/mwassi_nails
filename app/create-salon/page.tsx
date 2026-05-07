@@ -13,7 +13,7 @@ export interface Salon {
 }
 
 
-const page = () => {
+const Page = () => {
     const { user } = useKindeBrowserClient();
     const [salonName, setSalonName] = useState('')
     const [loading, setLoading] = useState(true)
@@ -180,4 +180,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page;

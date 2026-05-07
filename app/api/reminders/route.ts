@@ -35,7 +35,7 @@ export async function GET() {
     }
 
     let sentCount = 0;
-    let errors = [];
+    const errors = [];
 
     // 2. Iterate through appointments and send emails
     for (const app of appointments) {

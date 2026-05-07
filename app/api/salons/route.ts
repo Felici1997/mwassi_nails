@@ -164,6 +164,21 @@ export async function PATCH (request : Request){
                 })
             }
 
+            // I need to update the schema to add Staff -> User relation.
+            return NextResponse.json({ message: 'Staff management requires schema update. Please update Staff model to include User relation.' }, { status: 500 });
+    
+        }else if(action === 'DELETE'){
+            return NextResponse.json({ message: 'Staff management requires schema update.' }, { status 500 });
+        }  
+    } catch (error) {
+        console.error('Error in API:', error);
+        return NextResponse.json({ message: 'Internal Server Error' }, { status 500 });
+    }
+}
+
+                })
+            }
+
             const existingStaff = await prisma.staff.findFirst({
                 where: {
                     salonId: salon.id,

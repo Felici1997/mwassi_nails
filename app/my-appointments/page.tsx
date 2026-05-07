@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Wrapper from '@/app/components/Wrapper'
 import Notification from '@/app/components/Notification'
-import { Calendar, Clock, CheckCircle2, Clock4, Edit3, Trash2, X, Save } from 'lucide-react'
+import { Calendar, CheckCircle2, Clock4, Edit3, Trash2, X, Save } from 'lucide-react'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 
 interface Appointment {
@@ -37,8 +37,8 @@ const MyAppointments = () => {
       if (!response.ok) throw new Error('Erreur lors de la récupération')
       const data = await response.json()
       setAppointments(data.appointments || [])
-    } catch (error) {
-      console.error(error)
+    } catch (err) {
+      console.error(err)
     } finally {
       setLoading(false)
     }
@@ -64,7 +64,7 @@ const MyAppointments = () => {
       } else {
         setNotification('Erreur lors de l\'annulation.')
       }
-    } catch (error) {
+    } catch (err) {
       setNotification('Erreur serveur.')
     }
   }
@@ -102,7 +102,7 @@ const MyAppointments = () => {
         const errorData = await response.json()
         setNotification(errorData.message || 'Erreur lors de la mise à jour.')
       }
-    } catch (error) {
+    } catch (err) {
       setNotification('Erreur serveur.')
     }
   }
@@ -231,3 +231,4 @@ const MyAppointments = () => {
 }
 
 export default MyAppointments
+

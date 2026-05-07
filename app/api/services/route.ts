@@ -59,7 +59,7 @@ export async function POST(request: Request) {
     }
 }
 
-export async function GET(request: Request) {
+export async function GET(_request: Request) {
     try {
         const salon = await getMwassiSalon();
         const services = await prisma.service.findMany({
