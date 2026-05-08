@@ -32,8 +32,9 @@ const Page = ({ params }: { params: { id: string } }) => {
   const [serviceData, setServiceData] = useState<ServiceData | null>(null);
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
   const [selectedSlots, setSelectedSlots] = useState<string[]>([]);
-  const [mergedSlots, setMergedSlots] = useState<string[]>([]);
+const [mergedSlots, setMergedSlots] = useState<string[]>([]);
   const [salonId, setSalonId] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [notification, setNotification] = useState<string>('');
   const closeNotification = () => setNotification("");
@@ -147,6 +148,7 @@ const Page = ({ params }: { params: { id: string } }) => {
       setNotification('Veuillez vous connecter pour réserver.');
       return;
     }
+    setIsSubmitting(true);
     try {
       const response = await fetch('/api/appointments', {
         method: 'POST',
@@ -171,6 +173,8 @@ const Page = ({ params }: { params: { id: string } }) => {
       }
     } catch (error) {
       setNotification('Erreur serveur');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -215,7 +219,13 @@ const Page = ({ params }: { params: { id: string } }) => {
                   <div className='flex flex-col gap-4'>
                     <div className='flex'>
                       <input type="date" value={selectedDate} className='input input-bordered w-full' min={new Date().toISOString().split('T')[0]} onChange={(e) => setSelectedDate(e.target.value)} />
-                      <button className='btn btn-secondary ml-4' disabled={mergedSlots.length === 0} onClick={handleAppointment}>Réserver</button>
+                      <button 
+  className='btn btn-secondary ml-4' 
+  disabled={mergedSlots.length === 0 || isSubmitting} 
+  onClick={handleAppointment}
+>
+  {isSubmitting ? <span className="loading loading-spinner"></span> : 'Réserver'}
+</button>
                     </div>
                     
                     <ul className='grid grid-cols-2 gap-4 mt-4'>
@@ -250,7 +260,13 @@ const Page = ({ params }: { params: { id: string } }) => {
                     <div className='flex flex-col gap-4'>
                       <div className='flex'>
                         <input type="date" value={selectedDate} className='input input-bordered w-full' min={new Date().toISOString().split('T')[0]} onChange={(e) => setSelectedDate(e.target.value)} />
-                        <button className='btn btn-secondary ml-4' disabled={mergedSlots.length === 0} onClick={handleAppointment}>Réserver</button>
+<button 
+  className='btn btn-secondary ml-4' 
+  disabled={mergedSlots.length === 0 || isSubmitting} 
+  onClick={handleAppointment}
+>
+  {isSubmitting ? <span className="loading loading-spinner"></span> : 'Réserver'}
+</button>
                       </div>
                       <ul className='grid grid-cols-2 gap-4 mt-4'>
                         {availableSlots.length > 0 ? (

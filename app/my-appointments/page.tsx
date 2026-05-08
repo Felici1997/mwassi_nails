@@ -108,19 +108,64 @@ const MyAppointments = () => {
   }
 
   const isActionDisabled = (date: string, time: string) => {
-    const appointmentDateTime = new Date(`${date}T${time}`);
+    const [day, month, year] = date.split('/');
+    const isoDate = `${year}-${month}-${day}`;
+    const appointmentDateTime = new Date(`${isoDate}T${time}`);
     const now = new Date();
     const diffInMs = now.getTime() - appointmentDateTime.getTime();
     const fiveHoursInMs = 5 * 60 * 60 * 1000;
     return diffInMs > fiveHoursInMs;
   }
 
-  const getStatusIcon = (date: string) => {
-    const appointmentDate = new Date(date)
+  const getStatusIcon = (date: string, time: string) => {
+    const [day, month, year] = date.split('/');
+    const isoDate = `${year}-${month}-${day}`;
+    const appointmentDateTime = new Date(`${isoDate}T${time}`)
     const today = new Date()
     today.setHours(0, 0, 0, 0)
     
-    return appointmentDate < today ? <CheckCircle2 className='w-5 h-5 text-success' /> : <Clock4 className='w-5 h-5 text-warning' />
+    return appointmentDateTime < today ? <CheckCircle2 className='w-5 h-5 text-success' /> : <Clock4 className='w-5 h-5 text-warning' />
+  }
+
+  const renderAppointmentCard = (app: Appointment, isPast: boolean) => {
+    const disabled = isActionDisabled(app.appointmentDate, app.startTime);
+    return (
+      <div key={app.id} className={`bg-white p-4 rounded-xl shadow-sm border border-base-200 flex justify-between items-center ${isPast ? 'opacity-50 grayscale' : ''} ${disabled ? 'opacity-60' : ''}`}>
+        <div className='flex items-center gap-4'>
+          <div className='bg-secondary/10 p-3 rounded-full text-secondary'>
+            <Calendar className='w-5 h-5' />
+          </div>
+          <div>
+            <p className='font-bold'>{app.service.name}</p>
+            <p className='text-sm text-gray-500'>{app.appointmentDate}</p>
+          </div>
+        </div>
+        <div className='flex items-center gap-6'>
+          <div className='text-right'>
+            <p className='font-semibold'>{app.startTime} - {app.endTime}</p>
+          </div>
+          {!isPast && (
+            <div className='flex gap-2'>
+              <button 
+                onClick={() => openEditModal(app)} 
+                disabled={disabled}
+                className='btn btn-ghost btn-sm text-primary disabled:text-gray-400'
+              >
+                <Edit3 className='w-4' />
+              </button>
+              <button 
+                onClick={() => handleCancel(app.id)} 
+                disabled={disabled}
+                className='btn btn-ghost btn-sm text-error disabled:text-gray-400'
+              >
+                <Trash2 className='w-4' />
+              </button>
+            </div>
+          )}
+          {getStatusIcon(app.appointmentDate, app.startTime)}
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -132,45 +177,38 @@ const MyAppointments = () => {
         {loading ? (
           <div className='text-center mt-32'><span className="loading loading-spinner loading-lg"></span></div>
         ) : appointments.length > 0 ? (
-          <div className='grid grid-cols-1 gap-4'>
-            {appointments.map(app => {
-              const disabled = isActionDisabled(app.appointmentDate, app.startTime);
-              return (
-                <div key={app.id} className={`bg-white p-4 rounded-xl shadow-sm border border-base-200 flex justify-between items-center ${disabled ? 'opacity-60' : ''}`}>
-                  <div className='flex items-center gap-4'>
-                    <div className='bg-secondary/10 p-3 rounded-full text-secondary'>
-                      <Calendar className='w-5 h-5' />
-                    </div>
-                    <div>
-                      <p className='font-bold'>{app.service.name}</p>
-                      <p className='text-sm text-gray-500'>{app.appointmentDate}</p>
-                    </div>
-                  </div>
-                  <div className='flex items-center gap-6'>
-                    <div className='text-right'>
-                      <p className='font-semibold'>{app.startTime} - {app.endTime}</p>
-                    </div>
-                    <div className='flex gap-2'>
-                      <button 
-                        onClick={() => openEditModal(app)} 
-                        disabled={disabled}
-                        className='btn btn-ghost btn-sm text-primary disabled:text-gray-400'
-                      >
-                        <Edit3 className='w-4' />
-                      </button>
-                      <button 
-                        onClick={() => handleCancel(app.id)} 
-                        disabled={disabled}
-                        className='btn btn-ghost btn-sm text-error disabled:text-gray-400'
-                      >
-                        <Trash2 className='w-4' />
-                      </button>
-                    </div>
-                    {getStatusIcon(app.appointmentDate)}
-                  </div>
+          <div className='space-y-8'>
+            <div>
+              <h2 className='text-lg font-semibold mb-4 text-secondary'>À venir</h2>
+              <div className='grid grid-cols-1 gap-4'>
+                {appointments
+                  .filter(app => {
+                    const [day, month, year] = app.appointmentDate.split('/');
+                    const isoDate = `${year}-${month}-${day}`;
+                    return new Date(`${isoDate}T${app.startTime}`) >= new Date();
+                  })
+                  .map(app => renderAppointmentCard(app, false))}
+              </div>
+            </div>
+
+            {appointments.some(app => {
+                const [day, month, year] = app.appointmentDate.split('/');
+                const isoDate = `${year}-${month}-${day}`;
+                return new Date(`${isoDate}T${app.startTime}`) < new Date();
+            }) && (
+              <div>
+                <h2 className='text-lg font-semibold mb-4 text-gray-400'>Passés</h2>
+                <div className='grid grid-cols-1 gap-4'>
+                  {appointments
+                    .filter(app => {
+                      const [day, month, year] = app.appointmentDate.split('/');
+                      const isoDate = `${year}-${month}-${day}`;
+                      return new Date(`${isoDate}T${app.startTime}`) < new Date();
+                    })
+                    .map(app => renderAppointmentCard(app, true))}
                 </div>
-              )
-            })}
+              </div>
+            )}
           </div>
         ) : (
           <div className='text-center py-20 bg-base-200 rounded-2xl'>

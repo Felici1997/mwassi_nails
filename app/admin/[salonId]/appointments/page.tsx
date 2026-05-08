@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import Wrapper from '@/app/components/Wrapper'
 import Notification from '@/app/components/Notification'
-import { Calendar, Clock, User, Trash2, Edit3 } from 'lucide-react'
+import { Calendar, Clock, User, Trash2, Edit3, CheckCircle2, Clock4 } from 'lucide-react'
+import dayjs from 'dayjs'
 
 interface Appointment {
   id: string;
@@ -117,18 +118,74 @@ const AdminAppointments = ({ params }: { params: { salonId: string } }) => {
         fetchData()
     }, [params.salonId])
 
-    // Group appointments by date
-    const groupedAppointments = appointments.reduce((acc, app) => {
-        const date = app.appointmentDate
-        if (!acc[date]) {
-            acc[date] = []
-        }
-        acc[date].push(app)
-        return acc
-    }, {} as Record<string, Appointment[]>)
+    const renderAppointmentCard = (app: Appointment, isPast: boolean) => {
+        const [day, month, year] = app.appointmentDate.split('/');
+        const appointmentDateTime = dayjs(`${year}-${month}-${day} ${app.startTime}`)
+        const isNowOrFuture = appointmentDateTime.isAfter(dayjs())
 
-    // Sort dates
-    const sortedDates = Object.keys(groupedAppointments).sort()
+        return (
+            <div key={app.id} className={`bg-white p-4 rounded-xl shadow-sm border border-base-200 flex justify-between items-center ${isPast ? 'opacity-50 grayscale' : ''}`}>
+                <div className='flex items-center gap-4'>
+                    <div className={`p-3 rounded-full ${isPast ? 'bg-gray-100 text-gray-400' : 'bg-secondary/10 text-secondary'}`}>
+                        <Calendar className='w-5 h-5' />
+                    </div>
+                    <div>
+                        <p className='font-bold'>{app.user?.givenName || 'Client'} {app.user?.familyName || ''}</p>
+                        <p className='text-sm text-gray-500'>{app.service?.name} • {app.appointmentDate}</p>
+                    </div>
+                </div>
+                <div className='flex items-center gap-6'>
+                    <div className='text-right hidden md:block'>
+                        <p className='font-semibold'>{app.startTime} - {app.endTime}</p>
+                        <p className='text-xs text-gray-400'>{app.staff?.name || 'Non assigné'}</p>
+                    </div>
+                    <div className='flex gap-2'>
+                        {!isPast && (
+                            <>
+                                <button 
+                                    onClick={() => openEditModal(app)}
+                                    className='btn btn-ghost btn-sm text-primary'
+                                    title="Modifier le RDV"
+                                >
+                                    <Edit3 className='w-4' />
+                                </button>
+                                <button 
+                                    onClick={() => handleCancelAppointment(app.id)} 
+                                    className='btn btn-ghost btn-sm text-error'
+                                    title="Annuler le RDV"
+                                >
+                                    <Trash2 className='w-4' />
+                                </button>
+                            </>
+                        )}
+                        {isNowOrFuture ? (
+                            <Clock4 className='w-5 h-5 text-warning' />
+                        ) : (
+                            <CheckCircle2 className='w-5 h-5 text-success' />
+                        )}
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    const upcoming = appointments.filter(app => {
+        const [day, month, year] = app.appointmentDate.split('/');
+        return dayjs(`${year}-${month}-${day} ${app.startTime}`).isAfter(dayjs())
+    }).sort((a, b) => {
+        const [aD, aM, aY] = a.appointmentDate.split('/');
+        const [bD, bM, bY] = b.appointmentDate.split('/');
+        return dayjs(`${aY}-${aM}-${aD} ${a.startTime}`).diff(dayjs(`${bY}-${bM}-${bD} ${b.startTime}`))
+    })
+
+    const past = appointments.filter(app => {
+        const [day, month, year] = app.appointmentDate.split('/');
+        return dayjs(`${year}-${month}-${day} ${app.startTime}`).isBefore(dayjs())
+    }).sort((a, b) => {
+        const [aD, aM, aY] = a.appointmentDate.split('/');
+        const [bD, bM, bY] = b.appointmentDate.split('/');
+        return dayjs(`${bY}-${bM}-${bD} ${b.startTime}`).diff(dayjs(`${aY}-${aM}-${aD} ${a.startTime}`))
+    })
 
     return (
         <Wrapper>
@@ -139,52 +196,32 @@ const AdminAppointments = ({ params }: { params: { salonId: string } }) => {
                 {loading ? (
                     <div className='text-center mt-32'><span className="loading loading-spinner loading-lg"></span></div>
                 ) : (
-                    <div className='flex flex-col gap-8'>
-                        {sortedDates.length > 0 ? (
-                            sortedDates.map(date => (
-                                <div key={date} className='space-y-4'>
-                                    <h2 className='text-xl font-semibold border-b pb-2 text-secondary'>{date}</h2>
-                                    <div className='grid grid-cols-1 gap-4'>
-                                        {groupedAppointments[date].map(app => (
-                                            <div key={app.id} className='bg-white p-4 rounded-xl shadow-sm border border-base-200 flex justify-between items-center'>
-                                                <div className='flex items-center gap-4'>
-                                                    <div className='bg-secondary/10 p-3 rounded-full text-secondary'>
-                                                        <Calendar className='w-5 h-5' />
-                                                    </div>
-                                                    <div>
-                                                        <p className='font-bold'>{app.user?.givenName || 'Client'} {app.user?.familyName || ''}</p>
-                                                        <p className='text-sm text-gray-500'>{app.service?.name} - {app.staff?.name || 'Non assigné'}</p>
-                                                    </div>
-                                                </div>
-                                                <div className='flex items-center gap-6'>
-                                                    <div className='text-right'>
-                                                        <p className='font-semibold'>{app.startTime} - {app.endTime}</p>
-                                                    </div>
-                                                    <div className='flex gap-2'>
-                                                        <button 
-                                                            onClick={() => openEditModal(app)}
-                                                            className='btn btn-ghost btn-sm text-primary'
-                                                            title="Modifier le RDV"
-                                                        >
-                                                            <Edit3 className='w-4' />
-                                                        </button>
-                                                        <button 
-                                                            onClick={() => handleCancelAppointment(app.id)} 
-                                                            className='btn btn-ghost btn-sm text-error'
-                                                            title="Annuler le RDV"
-                                                        >
-                                                            <Trash2 className='w-4' />
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+                    <div className='flex flex-col gap-10'>
+                        <section>
+                            <h2 className='text-lg font-semibold mb-4 text-secondary flex items-center gap-2'>
+                                <Clock4 className='w-5 h-5' /> À venir
+                            </h2>
+                            {upcoming.length > 0 ? (
+                                <div className='grid grid-cols-1 gap-4'>
+                                    {upcoming.map(app => renderAppointmentCard(app, false))}
                                 </div>
-                            ))
-                        ) : (
-                            <p className='text-center text-gray-500'>Aucun rendez-vous enregistré.</p>
-                        )}
+                            ) : (
+                                <p className='text-gray-500 italic'>Aucun rendez-vous à venir.</p>
+                            )}
+                        </section>
+
+                        <section>
+                            <h2 className='text-lg font-semibold mb-4 text-gray-400 flex items-center gap-2'>
+                                <CheckCircle2 className='w-5 h-5' /> Passés
+                            </h2>
+                            {past.length > 0 ? (
+                                <div className='grid grid-cols-1 gap-4'>
+                                    {past.map(app => renderAppointmentCard(app, true))}
+                                </div>
+                            ) : (
+                                <p className='text-gray-500 italic'>Aucun rendez-vous passé.</p>
+                            )}
+                        </section>
                     </div>
                 )}
 
@@ -267,4 +304,3 @@ const AdminAppointments = ({ params }: { params: { salonId: string } }) => {
 }
 
 export default AdminAppointments
-
