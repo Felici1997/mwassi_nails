@@ -15,6 +15,7 @@ model User {
   familyName    String?
   givenName     String?
   email         String        @unique
+  role          String        @default("USER")
   appointments  Appointment[]
   staffProfile  Staff?
   createdSalons Salon[]       @relation("SalonCreators")
@@ -64,7 +65,9 @@ model Appointment {
   startTime       String
   endTime         String
   postNumber      Int      // Number of the workstation (1 to 4)
-
+  status          String   @default("PENDING") // PENDING, CONFIRMED, REJECTED
+  rejectionNote   String?
+  
   @@unique([staffId, appointmentDate, startTime])
 }
 

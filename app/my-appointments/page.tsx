@@ -11,6 +11,8 @@ interface Appointment {
   appointmentDate: string;
   startTime: string;
   endTime: string;
+  status: string;
+  rejectionNote?: string;
 }
 
 const MyAppointments = () => {
@@ -136,8 +138,20 @@ const MyAppointments = () => {
             <Calendar className='w-5 h-5' />
           </div>
           <div>
-            <p className='font-bold'>{app.service.name}</p>
+            <div className='flex items-center gap-2'>
+              <p className='font-bold'>{app.service.name}</p>
+              <span className={`badge badge-sm ${
+                app.status === 'CONFIRMED' ? 'badge-success' : 
+                app.status === 'REJECTED' ? 'badge-error' : 
+                'badge-ghost'
+              }`}>
+                {app.status === 'CONFIRMED' ? 'Confirmé' : app.status === 'REJECTED' ? 'Rejeté' : 'En attente'}
+              </span>
+            </div>
             <p className='text-sm text-gray-500'>{app.appointmentDate}</p>
+            {app.status === 'REJECTED' && app.rejectionNote && (
+              <p className='text-xs text-error italic mt-1'>Note: {app.rejectionNote}</p>
+            )}
           </div>
         </div>
         <div className='flex items-center gap-6'>

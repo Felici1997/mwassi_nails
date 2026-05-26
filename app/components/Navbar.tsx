@@ -12,16 +12,35 @@ const Navbar = () => {
     const pathname = usePathname();
     const [loading, setLoading] = useState<boolean>(true)
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+    const [role, setRole] = useState<string | null>(null)
 
     useEffect(() => {
-        if (user) {
-            setLoading(false)
+        if (user?.email === 'mrpfouapo@gmail.com') {
+            setRole('ADMIN');
+            setLoading(false);
+        } else if (user) {
+            // Fallback to API for other users
+            const fetchRole = async () => {
+                try {
+                    const res = await fetch('/api/me');
+                    const data = await res.json();
+                    if (res.ok) {
+                        setRole(data.role);
+                    }
+                } catch (e) {
+                    console.error("Failed to fetch role", e);
+                } finally {
+                    setLoading(false);
+                }
+            };
+            fetchRole();
         } else {
-            setLoading(true)
+            setLoading(false);
         }
     }, [user])
 
     const isActive = (link: string) => pathname === link
+
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -61,9 +80,12 @@ const Navbar = () => {
                             Mes rendez-vous
                         </Link>
                         
-                        <Link href={'/admin'} className={`link link-hover font-extrabold ${isActive('/admin') ? 'text-secondary' : ''} `}>
-                            Admin
-                        </Link>
+                        {role === 'ADMIN' && (
+                            <Link href={'/admin'} className={`link link-hover font-extrabold ${isActive('/admin') ? 'text-secondary' : ''} `}>
+                                Admin
+                            </Link>
+                        )}
+
 
 
                     </div>
@@ -88,6 +110,12 @@ const Navbar = () => {
                     <Link href={'/my-appointments'} className={`link link-hover font-extrabold ${isActive('/my-appointments') ? 'text-secondary' : ''} `}>
                         Mes rendez-vous
                     </Link>
+                    
+                    {role === 'ADMIN' && (
+                        <Link href={'/admin'} className={`link link-hover font-extrabold ${isActive('/admin') ? 'text-secondary' : ''} `}>
+                            Admin
+                        </Link>
+                    )}
                     
                     <LogoutLink className='btn btn-secondary btn-sm  '>Déconnexion</LogoutLink>
                 </div>

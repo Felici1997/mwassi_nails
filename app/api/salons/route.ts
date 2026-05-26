@@ -176,8 +176,3 @@ export async function PATCH (request : Request){
     }
 }
 
-    } catch (error) {
-        console.error('Error in API:', error);
-        return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
-    }
-}

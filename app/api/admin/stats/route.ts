@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
     try {
         const { searchParams } = new URL(request.url);
@@ -11,7 +13,11 @@ export async function GET(request: Request) {
         }
 
         const today = new Date();
-        const todayStr = today.toISOString().split('T')[0];
+        const day = String(today.getDate()).padStart(2, '0');
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const year = today.getFullYear();
+        const todayStr = `${day}/${month}/${year}`;
+
 
         const [totalServices, appointmentsToday] = await Promise.all([
             prisma.service.count({

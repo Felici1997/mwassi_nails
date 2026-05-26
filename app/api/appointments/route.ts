@@ -113,17 +113,18 @@ export async function POST(request: Request) {
                     }
                 }
 
-                return prisma.appointment.create({
-                    data: {
-                        userId: user.id,
-                        serviceId,
-                        staffId,
-                        appointmentDate,
-                        startTime,
-                        endTime,
-                        postNumber: assignedPost
-                    }
-                });
+                                return prisma.appointment.create({
+                                    data: {
+                                        userId: user.id,
+                                        serviceId,
+                                        staffId,
+                                        appointmentDate,
+                                        startTime,
+                                        endTime,
+                                        postNumber: assignedPost,
+                                        status: 'PENDING'
+                                    }
+                                });
             })
         );
         console.log('Appointments created successfully');

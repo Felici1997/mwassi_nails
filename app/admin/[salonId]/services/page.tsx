@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Wrapper from '@/app/components/Wrapper'
 import Notification from '@/app/components/Notification'
-import { Trash2, Edit3, Save, X, PlusCircle } from 'lucide-react'
+import { Trash2, Edit3, Save, X, PlusCircle, Search } from 'lucide-react'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 
 const ManageServices = ({ params }: { params: { salonId: string } }) => {
@@ -11,6 +11,7 @@ const ManageServices = ({ params }: { params: { salonId: string } }) => {
     const [loading, setLoading] = useState(true)
     const [editingService, setEditingService] = useState<any>(null)
     const [notification, setNotification] = useState('')
+    const [searchQuery, setSearchQuery] = useState('')
     
     // State for creating a new service
     const [isCreating, setIsCreating] = useState(false)
@@ -23,6 +24,23 @@ const ManageServices = ({ params }: { params: { salonId: string } }) => {
     })
     
     const closeNotification = () => setNotification("")
+    
+    const handleDeleteService = async (id: string) => {
+        if (!confirm('Êtes-vous sûr de vouloir supprimer ce service ? Attention, cela peut affecter les rendez-vous existants.')) return;
+        try {
+            const response = await fetch(`/api/services/${id}`, {
+                method: 'DELETE',
+            })
+            if (response.ok) {
+                setNotification('Service supprimé avec succès !')
+                fetchServices()
+            } else {
+                setNotification('Erreur lors de la suppression')
+            }
+        } catch (err) {
+            setNotification('Erreur serveur')
+        }
+    }
     
     const fetchServices = async () => {
         try {
@@ -37,7 +55,13 @@ const ManageServices = ({ params }: { params: { salonId: string } }) => {
     }
 
     useEffect(() => {
-        fetchServices()
+        fetchServices();
+
+        const interval = setInterval(() => {
+            fetchServices();
+        }, 30000);
+
+        return () => clearInterval(interval);
     }, [params.salonId])
 
     const handleUpdate = async (e: React.FormEvent) => {
@@ -90,84 +114,137 @@ const ManageServices = ({ params }: { params: { salonId: string } }) => {
         }
     }
 
-    if (loading) return <Wrapper><div className='text-center mt-32'><span className="loading loading-spinner loading-lg"></span></div></Wrapper>
+    const filteredServices = services.filter(s => 
+        s.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        s.category?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
+    if (loading) return <Wrapper><div className='text-center mt-32'><span className="loading loading-spinner loading-lg"></span></div></Wrapper>
+    
     return (
         <Wrapper>
             {notification && <Notification message={notification} onclose={closeNotification} />}
             <div className='p-5'>
-                <div className='flex justify-between items-center mb-6'>
+                <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6'>
                     <h1 className='text-2xl font-bold'>Gestion des Services</h1>
-                    <button onClick={() => setIsCreating(true)} className='btn btn-secondary flex items-center gap-2'>
-                        <PlusCircle className='w-4' /> Ajouter un Service
-                    </button>
+                    <div className='flex gap-2 w-full md:w-auto'>
+                        <div className='relative w-full md:w-80'>
+                            <input 
+                                type="text" 
+                                placeholder="Rechercher un service..." 
+                                className='input input-bordered w-full pl-10'
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            <Search className='absolute left-3 top-3 w-4 h-4 text-gray-400' />
+                        </div>
+                        <button onClick={() => setIsCreating(true)} className='btn btn-secondary flex items-center gap-2'>
+                            <PlusCircle className='w-4' /> Ajouter
+                        </button>
+                    </div>
                 </div>
                 
-                <div className='overflow-x-auto'>
-                    <table className='table w-full'>
-                        <thead>
+                <div className='overflow-x-auto bg-white rounded-xl shadow-sm border border-base-200'>
+                    <table className='table table-zebra w-full'>
+                        <thead className='bg-base-200'>
                             <tr>
-                                <th>Service</th>
-                                <th>Prix</th>
-                                <th>Durée</th>
-                                <th>Actions</th>
+                                <th className='p-4'>Service</th>
+                                <th className='p-4'>Prix</th>
+                                <th className='p-4'>Durée</th>
+                                <th className='p-4 text-center'>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {services.map(service => (
-                                <tr key={service.id}>
-                                    <td>
-                                        <div className='font-bold'>{service.name}</div>
-                                        <div className='text-xs text-gray-400'>{service.category}</div>
-                                    </td>
-                                    <td>{service.price} FCFA</td>
-                                    <td>{service.duration} min</td>
-                                    <td className='flex gap-2'>
-                                        <button onClick={() => setEditingService(service)} className='btn btn-sm btn-ghost'><Edit3 className='w-4' /></button>
-                                        <button className='btn btn-sm btn-ghost text-error'><Trash2 className='w-4' /></button>
+                            {filteredServices.length > 0 ? (
+                                filteredServices.map(service => (
+                                    <tr key={service.id}>
+                                        <td className='p-4'>
+                                            <div className='font-bold'>{service.name}</div>
+                                            <div className='text-xs text-gray-400'>{service.category}</div>
+                                        </td>
+                                        <td className='p-4'>{service.price} FCFA</td>
+                                        <td className='p-4'>{service.duration} min</td>
+                                        <td className='p-4 flex justify-center gap-2'>
+                                            <button onClick={() => setEditingService(service)} className='btn btn-ghost btn-xs text-primary'><Edit3 className='w-4' /></button>
+                                            <button onClick={() => handleDeleteService(service.id)} className='btn btn-ghost btn-xs text-error'><Trash2 className='w-4' /></button>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan={4} className='text-center py-10 text-gray-500 italic'>
+                                        Aucun service trouvé.
                                     </td>
                                 </tr>
-                            ))}
+                            )}
                         </tbody>
                     </table>
                 </div>
+
 
                 {editingService && (
                     <div className='modal modal-open'>
                         <div className='modal-box'>
                             <h3 className='font-bold text-lg mb-4'>Modifier le Service</h3>
                             <form onSubmit={handleUpdate} className='flex flex-col gap-4'>
-                                <div className='form-control'>
-                                    <label className='label'>Nom</label>
-                                    <input 
-                                        className='input input-bordered' 
-                                        value={editingService.name} 
-                                        onChange={e => setEditingService({...editingService, name: e.target.value})}
-                                    />
-                                </div>
-                                <div className='form-control'>
-                                    <label className='label'>Prix (FCFA)</label>
-                                    <input 
-                                        type='number' 
-                                        className='input input-bordered' 
-                                        value={editingService.price} 
-                                        onChange={e => setEditingService({...editingService, price: e.target.value})}
-                                    />
-                                </div>
-                                <div className='form-control'>
-                                    <label className='label'>Durée (min)</label>
-                                    <input 
-                                        type='number' 
-                                        className='input input-bordered' 
-                                        value={editingService.duration} 
-                                        onChange={e => setEditingService({...editingService, duration: e.target.value})}
-                                    />
-                                </div>
-                                <div className='modal-action'>
-                                    <button type='button' className='btn' onClick={() => setEditingService(null)}><X className='w-4' /> Annuler</button>
-                                    <button type='submit' className='btn btn-secondary'><Save className='w-4' /> Enregistrer</button>
-                                </div>
-                            </form>
+                                 <div className='form-control'>
+                                     <label className='label'>Nom</label>
+                                     <input 
+                                         className='input input-bordered' 
+                                         value={editingService.name} 
+                                         onChange={e => setEditingService({...editingService, name: e.target.value})}
+                                     />
+                                 </div>
+                                 <div className='form-control'>
+                                     <label className='label'>Catégorie</label>
+                                     <select 
+                                         className='select select-bordered' 
+                                         value={editingService.category} 
+                                         onChange={e => setEditingService({...editingService, category: e.target.value})}
+                                     >
+                                         <option value=''>Sélectionner...</option>
+                                         <option value='Ongles Naturels'>Ongles Naturels</option>
+                                         <option value='Construction Chablon'>Construction Chablon</option>
+                                         <option value='Construction Pop it'>Construction Pop it</option>
+                                         <option value='Sur Capsules'>Sur Capsules</option>
+                                         <option value='Soins'>Soins</option>
+                                         <option value='Nail Art'>Nail Art</option>
+                                         <option value='Dépose'>Dépose</option>
+                                         <option value='Renforcement'>Renforcement</option>
+                                     </select>
+                                 </div>
+                                 <div className='form-control'>
+                                     <label className='label'>Prix (FCFA)</label>
+                                     <input 
+                                         type='number' 
+                                         className='input input-bordered' 
+                                         value={editingService.price} 
+                                         onChange={e => setEditingService({...editingService, price: e.target.value})}
+                                     />
+                                 </div>
+                                 <div className='form-control'>
+                                     <label className='label'>Durée (min)</label>
+                                     <input 
+                                         type='number' 
+                                         className='input input-bordered' 
+                                         value={editingService.duration} 
+                                         onChange={e => setEditingService({...editingService, duration: e.target.value})}
+                                     />
+                                 </div>
+                                 <div className='form-control'>
+                                     <label className='label'>Description</label>
+                                     <textarea 
+                                         className='textarea textarea-bordered' 
+                                         value={editingService.description} 
+                                         onChange={e => setEditingService({...editingService, description: e.target.value})}
+                                     ></textarea>
+                                 </div>
+                                 <div className='modal-action'>
+                                     <button type='button' className='btn' onClick={() => setEditingService(null)}><X className='w-4' /> Annuler</button>
+                                     <button type='submit' className='btn btn-secondary'><Save className='w-4' /> Enregistrer</button>
+                                 </div>
+                                 </form>
+
                         </div>
                     </div>
                 )}
