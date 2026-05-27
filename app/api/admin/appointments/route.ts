@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-import fs from 'fs';
-import path from 'path';
 
 export async function GET(request: Request) {
     try {
@@ -27,11 +25,6 @@ export async function GET(request: Request) {
 
         return NextResponse.json({ appointments }, { status: 200 });
     } catch (error: any) {
-        try {
-            fs.writeFileSync(path.join(process.cwd(), 'api_error.log'), `${new Date().toISOString()} - ${error.stack || error}\n`, { flag: 'a' });
-        } catch (fsError) {
-            console.error('Failed to write to log file', fsError);
-        }
         console.error('Error fetching admin appointments:', error);
         return NextResponse.json({ error: 'Internal Server Error', details: error.message }, { status: 500 });
     }
