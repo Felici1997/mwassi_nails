@@ -82,6 +82,6 @@ model Appointment {
   status          String   @default("PENDING") // PENDING, CONFIRMED, REJECTED
   rejectionNote   String?
   
-  @@unique([staffId, appointmentDate, startTime])
+  @@unique([postNumber, appointmentDate, startTime])
 }
 
