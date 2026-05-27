@@ -2,6 +2,8 @@ import { initEdgeStore } from '@edgestore/server';
 import { createEdgeStoreNextHandler } from '@edgestore/server/adapters/next/app';
  
 const es = initEdgeStore.create();
+
+export const dynamic = 'force-dynamic';
  
 /**
  * This is the main router for the Edge Store buckets.
