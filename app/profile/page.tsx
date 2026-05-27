@@ -48,8 +48,14 @@ export default function ProfilePage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(profile),
       });
-      if (!res.ok) throw new Error('Failed to update profile');
-      toast.success('Profile updated!');
+      
+      const data = await res.json();
+      
+      if (!res.ok) {
+        throw new Error(data.error || 'Échec de la mise à jour du profil');
+      }
+      
+      toast.success('Profil mis à jour !');
       setIsEditing(false);
     } catch (error: any) {
       toast.error(error.message);

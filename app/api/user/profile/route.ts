@@ -22,25 +22,36 @@ export async function PATCH(req: NextRequest) {
     const body = await req.json();
     const validatedData = profileSchema.parse(body);
 
+    // Handle empty birthday string
+    const birthdayValue = validatedData.birthday && validatedData.birthday.trim() !== "" 
+      ? new Date(validatedData.birthday) 
+      : undefined;
+
     const updatedUser = await prisma.user.upsert({
       where: { email: user.email },
       update: {
-        ...validatedData,
-        birthday: validatedData.birthday ? new Date(validatedData.birthday) : undefined,
+        fullName: validatedData.fullName,
+        phone1: validatedData.phone1,
+        phone2: validatedData.phone2,
+        profession: validatedData.profession,
+        birthday: birthdayValue,
       },
       create: {
         email: user.email,
-        ...validatedData,
-        birthday: validatedData.birthday ? new Date(validatedData.birthday) : undefined,
+        fullName: validatedData.fullName,
+        phone1: validatedData.phone1,
+        phone2: validatedData.phone2,
+        profession: validatedData.profession,
+        birthday: birthdayValue,
       },
     });
 
     return NextResponse.json({ user: updatedUser }, { status: 200 });
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: error.errors }, { status: 400 });
+      return NextResponse.json({ error: error.errors[0].message }, { status: 400 });
     }
-    console.error('Profile update error:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    console.error('Detailed Profile Update Error:', error);
+    return NextResponse.json({ error: error instanceof Error ? error.message : 'Internal Server Error' }, { status: 500 });
   }
 }
