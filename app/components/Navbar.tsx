@@ -80,6 +80,10 @@ const Navbar = () => {
                             Mes rendez-vous
                         </Link>
                         
+                        <Link href={'/profile'} className={`link link-hover font-extrabold ${isActive('/profile') ? 'text-secondary' : ''} `}>
+                            Mon Profil
+                        </Link>
+                        
                         {role === 'ADMIN' && (
                             <Link href={'/admin'} className={`link link-hover font-extrabold ${isActive('/admin') ? 'text-secondary' : ''} `}>
                                 Admin
@@ -109,6 +113,10 @@ const Navbar = () => {
                     
                     <Link href={'/my-appointments'} className={`link link-hover font-extrabold ${isActive('/my-appointments') ? 'text-secondary' : ''} `}>
                         Mes rendez-vous
+                    </Link>
+
+                    <Link href={'/profile'} className={`link link-hover font-extrabold ${isActive('/profile') ? 'text-secondary' : ''} `}>
+                        Mon Profil
                     </Link>
                     
                     {role === 'ADMIN' && (

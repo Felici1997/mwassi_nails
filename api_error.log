@@ -174,3 +174,1441 @@ Timed out fetching a new connection from the connection pool. More info: http://
     at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
     at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
     at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:22:12.811Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:24:17.956Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Timed out fetching a new connection from the connection pool. More info: http://pris.ly/d/connection-pool (Current connection pool timeout: 10, connection limit: 9)
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:25:07.764Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:26:07.772Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:27:07.796Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:28:07.765Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:29:07.766Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:30:07.804Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:31:07.758Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:32:07.820Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:33:07.758Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:34:07.790Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:35:07.724Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:36:07.787Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:37:07.742Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:38:07.796Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:39:07.796Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:40:07.767Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:41:07.765Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:42:07.802Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:43:07.786Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:44:07.779Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:45:07.779Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:46:07.806Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:47:07.708Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:48:07.667Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:49:07.685Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:50:07.773Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:51:07.741Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:52:07.738Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:53:07.779Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:54:07.695Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:55:07.777Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:56:07.771Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:57:07.689Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:58:07.768Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T15:59:07.738Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:00:07.748Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:01:07.758Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:02:07.696Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:03:07.765Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:04:07.732Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:05:07.700Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:06:07.785Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:07:07.744Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:08:07.800Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:09:07.687Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)
+2026-05-26T16:10:07.737Z - PrismaClientKnownRequestError: 
+Invalid `prisma.appointment.findMany()` invocation:
+
+
+Can't reach database server at `db.prisma.io:5432`
+
+Please make sure your database server is running at `db.prisma.io:5432`.
+    at $n.handleRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async GET (webpack-internal:///(rsc)/./app/api/admin/appointments/route.ts:28:30)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:55778
+    at async eO.execute (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:46527)
+    at async eO.handle (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\compiled\next-server\app-route.runtime.dev.js:6:57112)
+    at async doRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1352:42)
+    at async cacheEntry.responseCache.get.routeKind (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1574:28)
+    at async DevServer.renderToResponseWithComponentsImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1482:28)
+    at async DevServer.renderPageComponent (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1908:24)
+    at async DevServer.renderToResponseImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:1946:32)
+    at async DevServer.pipeImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:921:25)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\next-server.js:272:17)
+    at async DevServer.handleRequestImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\base-server.js:817:17)
+    at async C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:173:21)
+    at async handleRequest (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:350:24)
+    at async requestHandlerImpl (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\router-server.js:374:13)
+    at async Server.requestListener (C:\Users\33758\Documents\CloneWebSIte\Projets\Bookit-mwassi\bookit\node_modules\next\dist\server\lib\start-server.js:141:13)

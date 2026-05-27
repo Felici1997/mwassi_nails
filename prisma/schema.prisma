@@ -14,11 +14,25 @@ model User {
   id            String        @id @default(cuid())
   familyName    String?
   givenName     String?
+  fullName      String?
+  phone1        String?
+  phone2        String?
+  birthday      DateTime?
+  profession    String?
   email         String        @unique
   role          String        @default("USER")
   appointments  Appointment[]
   staffProfile  Staff?
   createdSalons Salon[]       @relation("SalonCreators")
+  suggestions   Suggestion[]
+}
+
+model Suggestion {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
 }
 
 model Salon {

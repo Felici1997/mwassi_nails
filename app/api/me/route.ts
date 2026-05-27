@@ -12,10 +12,22 @@ export async function GET() {
     try {
         const dbUser = await prisma.user.findUnique({
             where: { email: user.email },
-            select: { role: true }
+            select: { 
+                role: true,
+                fullName: true,
+                phone1: true,
+                phone2: true,
+                birthday: true,
+                profession: true,
+            }
         });
 
-        return NextResponse.json({ role: dbUser?.role || 'USER', email: user.email }, { status: 200 });
+        return NextResponse.json({ 
+            role: dbUser?.role || 'USER', 
+            email: user.email,
+            profile: dbUser,
+            isProfileComplete: !!dbUser?.phone1 
+        }, { status: 200 });
     } catch (error) {
         console.error('Error fetching user role:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
