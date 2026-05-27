@@ -80,12 +80,12 @@ export default function ProfilePage() {
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-8">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold">My Profile</h1>
+        <h1 className="text-3xl font-bold">Mon Profil</h1>
         <button 
           onClick={() => setIsEditing(!isEditing)} 
           className={`btn ${isEditing ? 'btn-outline' : 'btn-primary'}`}
         >
-          {isEditing ? 'Cancel' : 'Edit Profile'}
+          {isEditing ? 'Annuler' : 'Modifier le Profil'}
         </button>
       </div>
 
@@ -94,12 +94,12 @@ export default function ProfilePage() {
         <div className="md:col-span-2 space-y-6">
           <div className="card bg-base-100 shadow-xl border border-base-200">
             <div className="card-body">
-              <h2 className="card-title text-xl mb-4">Personal Information</h2>
+              <h2 className="card-title text-xl mb-4">Informations Personnelles</h2>
               
               <form onSubmit={handleUpdateProfile} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="form-control">
-                    <label className="label"><span className="label-text">Full Name</span></label>
+                    <label className="label"><span className="label-text">Nom Complet</span></label>
                     <div className="relative">
                       <User className="absolute left-3 top-3 w-4 h-4 text-base-content/50" />
                       <input 
@@ -127,7 +127,7 @@ export default function ProfilePage() {
                   </div>
 
                   <div className="form-control">
-                    <label className="label"><span className="label-text">Phone 1</span></label>
+                    <label className="label"><span className="label-text">Téléphone 1</span></label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-3 w-4 h-4 text-base-content/50" />
                       <input 
@@ -141,7 +141,7 @@ export default function ProfilePage() {
                   </div>
 
                   <div className="form-control">
-                    <label className="label"><span className="label-text">Phone 2</span></label>
+                    <label className="label"><span className="label-text">Téléphone 2</span></label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-3 w-4 h-4 text-base-content/50" />
                       <input 
@@ -155,7 +155,7 @@ export default function ProfilePage() {
                   </div>
 
                   <div className="form-control">
-                    <label className="label"><span className="label-text">Birthday</span></label>
+                    <label className="label"><span className="label-text">Date de Naissance</span></label>
                     <div className="relative">
                       <Calendar className="absolute left-3 top-3 w-4 h-4 text-base-content/50" />
                       <input 
@@ -171,7 +171,7 @@ export default function ProfilePage() {
 
                 {isEditing && (
                   <div className="flex justify-end mt-6">
-                    <button type="submit" className="btn btn-primary">Save Changes</button>
+                    <button type="submit" className="btn btn-primary">Enregistrer les modifications</button>
                   </div>
                 )}
               </form>
@@ -183,14 +183,14 @@ export default function ProfilePage() {
         <div className="space-y-6">
           <div className="card bg-base-200 shadow-md border border-base-300">
             <div className="card-body p-6">
-              <h2 className="card-title text-lg mb-2">Security</h2>
-              <p className="text-sm text-base-content/70 mb-4">Manage your password and authentication settings.</p>
+              <h2 className="card-title text-lg mb-2">Sécurité</h2>
+              <p className="text-sm text-base-content/70 mb-4">Gérez votre mot de passe et vos paramètres d'authentification.</p>
               <a 
                 href="https://app.kinde.com/profile" 
                 target="_blank" 
                 className="btn btn-outline btn-sm gap-2"
               >
-                <Lock className="w-4 h-4" /> Update Password
+                <Lock className="w-4 h-4" /> Modifier le mot de passe
               </a>
             </div>
           </div>
@@ -200,11 +200,11 @@ export default function ProfilePage() {
               <h2 className="card-title text-lg mb-2 flex items-center gap-2">
                 <MessageSquare className="w-5 h-5" /> Suggestions
               </h2>
-              <p className="text-sm text-base-content/70 mb-4">Have a feature request or feedback? Let us know!</p>
+              <p className="text-sm text-base-content/70 mb-4">Une suggestion ou un feedback ? Dites-le nous !</p>
               <form onSubmit={handleSendSuggestion} className="space-y-3">
                 <textarea 
                   className="textarea textarea-bordered w-full" 
-                  placeholder="Your suggestion..."
+                  placeholder="Votre suggestion..."
                   value={suggestion}
                   onChange={(e) => setSuggestion(e.target.value)}
                   rows={4}
@@ -214,7 +214,7 @@ export default function ProfilePage() {
                   disabled={suggesting || !suggestion.trim()}
                   className="btn btn-primary btn-sm w-full"
                 >
-                  {suggesting ? <span className="loading loading-spinner"></span> : 'Submit Suggestion'}
+                  {suggesting ? <span className="loading loading-spinner"></span> : 'Envoyer la suggestion'}
                 </button>
               </form>
             </div>

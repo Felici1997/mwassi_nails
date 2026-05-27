@@ -74,19 +74,19 @@ export default function OnboardingModal() {
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
       <div className="bg-base-100 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden border border-base-300">
         <div className="p-6 border-b border-base-200 bg-base-200/50">
-          <h2 className="text-2xl font-bold text-base-content">Complete Your Profile</h2>
-          <p className="text-sm text-base-content/70">Please provide your details to continue using the platform.</p>
+          <h2 className="text-2xl font-bold text-base-content">Complétez Votre Profil</h2>
+          <p className="text-sm text-base-content/70">Veuillez fournir vos informations pour continuer à utiliser la plateforme.</p>
         </div>
         
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text font-medium">Full Name</span>
+              <span className="label-text font-medium">Nom Complet</span>
             </label>
             <input 
               type="text" 
               className="input input-bordered w-full" 
-              placeholder="John Doe"
+              placeholder="Jean Dupont"
               value={formData.fullName}
               onChange={(e) => setFormData({...formData, fullName: e.target.value})}
             />
@@ -94,7 +94,7 @@ export default function OnboardingModal() {
 
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text font-medium">Phone Number 1 (Required)</span>
+              <span className="label-text font-medium">Téléphone 1 (Obligatoire)</span>
             </label>
             <input 
               type="tel" 
@@ -108,7 +108,7 @@ export default function OnboardingModal() {
 
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text font-medium">Phone Number 2 (Optional)</span>
+              <span className="label-text font-medium">Téléphone 2 (Optionnel)</span>
             </label>
             <input 
               type="tel" 
@@ -121,7 +121,7 @@ export default function OnboardingModal() {
 
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text font-medium">Birthday</span>
+              <span className="label-text font-medium">Date de Naissance</span>
             </label>
             <input 
               type="date" 
@@ -138,7 +138,7 @@ export default function OnboardingModal() {
             <input 
               type="text" 
               className="input input-bordered w-full" 
-              placeholder="e.g. Software Engineer"
+              placeholder="ex: Ingénieur Logiciel"
               value={formData.profession}
               onChange={(e) => setFormData({...formData, profession: e.target.value})}
             />
@@ -149,7 +149,7 @@ export default function OnboardingModal() {
             disabled={loading || !formData.phone1}
             className="btn btn-primary w-full mt-4"
           >
-            {loading ? <span className="loading loading-spinner"></span> : 'Continue'}
+            {loading ? <span className="loading loading-spinner"></span> : 'Continuer'}
           </button>
         </form>
       </div>
