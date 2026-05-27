@@ -22,9 +22,14 @@ export async function PATCH(req: NextRequest) {
     const body = await req.json();
     const validatedData = profileSchema.parse(body);
 
-    const updatedUser = await prisma.user.update({
+    const updatedUser = await prisma.user.upsert({
       where: { email: user.email },
-      data: {
+      update: {
+        ...validatedData,
+        birthday: validatedData.birthday ? new Date(validatedData.birthday) : undefined,
+      },
+      create: {
+        email: user.email,
         ...validatedData,
         birthday: validatedData.birthday ? new Date(validatedData.birthday) : undefined,
       },
