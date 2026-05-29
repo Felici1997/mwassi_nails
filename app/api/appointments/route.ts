@@ -9,41 +9,25 @@ interface AppointmentRequest {
     timeSlots: string[];
 }
 
-/**
- * Helper to check if a time slot is within the salon's working hours (08:00 - 19:00)
- */
 function isWithinWorkingHours(startTime: string, endTime: string): boolean {
     const [startH, startM] = startTime.split(':').map(Number);
     const [endH, endM] = endTime.split(':').map(Number);
-    
     const startTotal = startH * 60 + startM;
     const endTotal = endH * 60 + endM;
-    
     const opening = 8 * 60; // 08:00
     const closing = 19 * 60; // 19:00
-    
     return startTotal >= opening && endTotal <= closing;
 }
 
-/**
- * Helper to check if the appointment is older than 5 hours.
- */
 async function isExpired(id: string): Promise<boolean> {
-    const appointment = await prisma.appointment.findUnique({
-        where: { id }
-    });
-
+    const appointment = await prisma.appointment.findUnique({ where: { id } });
     if (!appointment) return true;
-
-    // Convert dd/MM/yyyy to yyyy-MM-dd for valid Date parsing
     const [day, month, year] = appointment.appointmentDate.split('/');
     const isoDate = `${year}-${month}-${day}`;
     const appointmentDateTime = new Date(`${isoDate}T${appointment.startTime}`);
     const now = new Date();
-    
     const diffInMs = now.getTime() - appointmentDateTime.getTime();
     const fiveHoursInMs = 5 * 60 * 60 * 1000;
-
     return diffInMs > fiveHoursInMs;
 }
 
@@ -51,108 +35,61 @@ export async function POST(request: Request) {
     try {
         const body = await request.json();
         const { email, serviceId, staffId, appointmentDate, timeSlots } = body;
-        console.log('Booking request received:', { email, serviceId, appointmentDate, timeSlots });
 
         if (!email || !serviceId || !appointmentDate || !timeSlots || !Array.isArray(timeSlots)) {
-            return NextResponse.json({ message: 'Tous les champs sont requis et timeSlots doit être un tableau.' }, { status: 400 });
+            return NextResponse.json({ message: 'Tous les champs sont requis.' }, { status: 400 });
         }
 
-        // 0. Verify service exists
         const service = await prisma.service.findUnique({ where: { id: serviceId } });
         if (!service) {
             return NextResponse.json({ message: 'Le service sélectionné n\'existe pas.' }, { status: 404 });
         }
 
-        // 1. Check Daily Quota (Max 13 clients per day)
-        const dailyCount = await prisma.appointment.count({
-            where: { appointmentDate }
-        });
-
+        const dailyCount = await prisma.appointment.count({ where: { appointmentDate } });
         if (dailyCount >= 13) {
-            return NextResponse.json({ message: 'Le salon est complet pour cette journée (max 13 clients), veuillez réserver un autre jour.' }, { status: 403 });
+            return NextResponse.json({ message: 'Le salon est complet pour cette journée (max 13 clients).' }, { status: 403 });
         }
 
-        // 2. Validate working hours for all slots
         for (const slot of timeSlots) {
-            if (!slot.includes(' - ')) {
-                return NextResponse.json({ message: `Format de créneau invalide : ${slot}` }, { status: 400 });
-            }
             const [start, end] = slot.split(' - ');
-            if (!isWithinWorkingHours(start, end)) {
-                return NextResponse.json({ message: `Le créneau ${slot} est en dehors des heures d'ouverture (08:00 - 19:00).` }, { status: 400 });
+            if (!start || !end || !isWithinWorkingHours(start, end)) {
+                return NextResponse.json({ message: `Le créneau ${slot} est invalide ou hors horaires.` }, { status: 400 });
             }
         }
 
-        // Auto-create user if they don't exist in the DB
-        let user = await prisma.user.findUnique({
-            where: { email },
-        });
-
+        let user = await prisma.user.findUnique({ where: { email } });
         if (!user) {
             user = await prisma.user.create({
-                data: {
-                    email,
-                    givenName: 'Client',
-                    familyName: 'Kinde'
-                }
+                data: { email, givenName: 'Client', familyName: 'Kinde' }
             });
         }
 
-        // 3. Create appointments and assign postNumber
         const appointments = await Promise.all(
             timeSlots.map(async (slot) => {
                 const [startTime, endTime] = slot.split(' - ');
-                
                 let assignedPost: number | null = null;
                 for (let p = 1; p <= 4; p++) {
                     const existing = await prisma.appointment.findFirst({
-                        where: {
-                            appointmentDate,
-                            startTime,
-                            postNumber: p
-                        }
+                        where: { appointmentDate, startTime, postNumber: p }
                     });
                     if (!existing) {
                         assignedPost = p;
                         break;
                     }
                 }
-
-                if (assignedPost === null) {
-                    throw new Error(`Le créneau ${slot} est malheureusement complet (tous les postes sont occupés).`);
-                }
-
+                if (assignedPost === null) throw new Error(`Le créneau ${slot} est complet.`);
                 return prisma.appointment.create({
-                    data: {
-                        userId: user.id,
-                        serviceId,
-                        staffId,
-                        appointmentDate,
-                        startTime,
-                        endTime,
-                        postNumber: assignedPost,
-                        status: 'PENDING'
-                    }
+                    data: { userId: user.id, serviceId, staffId, appointmentDate, startTime, endTime, postNumber: assignedPost, status: 'PENDING' }
                 });
             })
         );
+
         return NextResponse.json({ appointments }, { status: 201 });
-
     } catch (error: any) {
-        console.error('Detailed Booking Error:', error);
-        
         if (error.code === 'P2002') {
-            return NextResponse.json({ 
-                message: 'Ce créneau vient d\'être pris par un autre client. Veuillez choisir un autre horaire.', 
-                details: error.meta?.target 
-            }, { status: 409 });
+            return NextResponse.json({ message: 'Ce créneau vient d\'être pris. Veuillez choisir un autre horaire.' }, { status: 409 });
         }
-
-        return NextResponse.json({ 
-            error: 'Internal Server Error', 
-            message: error.message || 'Une erreur inattendue est survenue',
-            code: error.code 
-        }, { status: 500 });
+        return NextResponse.json({ error: 'Internal Server Error', message: error.message }, { status: 500 });
     }
 }
 
@@ -160,32 +97,14 @@ export async function GET(request: Request) {
     try {
         const { searchParams } = new URL(request.url);
         const email = searchParams.get('email');
-
-        if (!email) {
-            return NextResponse.json({ message: "email manquant" }, { status: 400 });
-        }
+        if (!email) return NextResponse.json({ message: "email manquant" }, { status: 400 });
         const user = await prisma.user.findUnique({
             where: { email },
-            include: {
-                appointments: {
-                    include: {
-                        service: true,
-                        staff: true
-                    }
-                }
-            }
+            include: { appointments: { include: { service: true, staff: true } } }
         });
-
-        if (!user) {
-            return NextResponse.json({ message: 'Utilisateur non trouvé' }, { status: 404 });
-        }
-
-        const appointmentsWithoutUserId = user.appointments.map(({ userId, ...rest }) => rest);
-
-        return NextResponse.json({ appointments: appointmentsWithoutUserId }, { status: 200 });
-
+        if (!user) return NextResponse.json({ message: 'Utilisateur non trouvé' }, { status: 404 });
+        return NextResponse.json({ appointments: user.appointments.map(({ userId, ...rest }) => rest) }, { status: 200 });
     } catch (error) {
-        console.error('Error in API:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
@@ -194,52 +113,26 @@ export async function PATCH(request: Request) {
     try {
         const body = await request.json();
         const { id, appointmentDate, startTime, endTime, serviceId, staffId } = body;
-
-        if (!id) {
-            return NextResponse.json({ message: "L'ID est requis" }, { status: 400 });
-        }
-
-        if (await isExpired(id)) {
-            return NextResponse.json({ message: "Modification impossible : le rendez-vous est passé depuis plus de 5h." }, { status: 403 });
-        }
-
-        const updatedAppointment = await prisma.appointment.update({
+        if (!id) return NextResponse.json({ message: "L'ID est requis" }, { status: 400 });
+        if (await isExpired(id)) return NextResponse.json({ message: "Trop tard pour modifier." }, { status: 403 });
+        const updated = await prisma.appointment.update({
             where: { id },
-            data: {
-                appointmentDate,
-                startTime,
-                endTime,
-                serviceId,
-                staffId
-            }
+            data: { appointmentDate, startTime, endTime, serviceId, staffId }
         });
-
-        return NextResponse.json({ message: "Rendez-vous mis à jour", updatedAppointment }, { status: 200 });
-        } catch (error) {
-            console.error('Error updating appointment:', error);
-            return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
-        }
+        return NextResponse.json({ message: "Mis à jour", updatedAppointment: updated }, { status: 200 });
+    } catch (error) {
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    }
 }
 
 export async function DELETE(request: Request) {
     try {
         const { id } = await request.json();
-
-        if (!id) {
-            return NextResponse.json({ message: 'L\'ID du rendez-vous est requis' }, { status: 400 });
-        }
-
-        if (await isExpired(id)) {
-            return NextResponse.json({ message: "Annulation impossible : le rendez-vous est passé depuis plus de 5h." }, { status: 403 });
-        }
-
-        await prisma.appointment.delete({
-            where: { id },
-        });
-
-        return NextResponse.json({ message: 'Rendez-vous supprimé avec succès' }, { status: 200 });
-        } catch (error) {
-            console.error('Error in API:', error);
-            return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
-        }
+        if (!id) return NextResponse.json({ message: 'L\'ID est requis' }, { status: 400 });
+        if (await isExpired(id)) return NextResponse.json({ message: "Trop tard pour annuler." }, { status: 403 });
+        await prisma.appointment.delete({ where: { id } });
+        return NextResponse.json({ message: 'Supprimé avec succès' }, { status: 200 });
+    } catch (error) {
+        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    }
 }
