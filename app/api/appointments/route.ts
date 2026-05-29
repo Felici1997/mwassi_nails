@@ -75,100 +75,6 @@ export async function POST(request: Request) {
         // 2. Validate working hours for all slots
         for (const slot of timeSlots) {
             if (!slot.includes(' - ')) {
-                return NextResponse.json({ message: \`Format de créneau invalide : \${slot}\` }, { status: 400 });
-            }
-            const [start, end] = slot.split(' - ');
-            if (!isWithinWorkingHours(start, end)) {
-                return NextResponse.json({ message: \`Le créneau \${slot} est en dehors des heures d'ouverture (08:00 - 19:00).\` }, { status: 400 });
-            }
-        }
-
-        // Auto-create user if they don't exist in the DB
-        let user = await prisma.user.findUnique({
-            where: { email },
-        });
-
-        if (!user) {
-            user = await prisma.user.create({
-                data: {
-                    email,
-                    givenName: 'Client',
-                    familyName: 'Kinde'
-                }
-            });
-        }
-
-        // 3. Create appointments and assign postNumber
-        const appointments = await Promise.all(
-            timeSlots.map(async (slot) => {
-                const [startTime, endTime] = slot.split(' - ');
-                
-                let assignedPost: number | null = null;
-                for (let p = 1; p <= 4; p++) {
-                    const existing = await prisma.appointment.findFirst({
-                        where: {
-                            appointmentDate,
-                            startTime,
-                            postNumber: p
-                        }
-                    });
-                    if (!existing) {
-                        assignedPost = p;
-                        break;
-                    }
-                }
-
-                if (assignedPost === null) {
-                    throw new Error(\`Le créneau \${slot} est malheureusement complet (tous les postes sont occupés).\`);
-                }
-
-                return prisma.appointment.create({
-                    data: {
-                        userId: user.id,
-                        serviceId,
-                        staffId,
-                        appointmentDate,
-                        startTime,
-                        endTime,
-                        postNumber: assignedPost,
-                        status: 'PENDING'
-                    }
-                });
-            })
-        );
-        return NextResponse.json({ appointments }, { status: 201 });
-
-    } catch (error: any) {
-        console.error('Detailed Booking Error:', error);
-        
-        // Special handling for Prisma Unique Constraint errors (P2002)
-        if (error.code === 'P2002') {
-            return NextResponse.json({ 
-                message: 'Ce créneau vient d\'être pris par un autre client. Veuillez choisir un autre horaire.', 
-                details: error.meta?.target 
-            }, { status: 409 });
-        }
-
-        return NextResponse.json({ 
-            error: 'Internal Server Error', 
-            message: error.message || 'Une erreur inattendue est survenue',
-            code: error.code 
-        }, { status: 500 });
-    }
-}
-
-        // 1. Check Daily Quota (Max 13 clients per day)
-        const dailyCount = await prisma.appointment.count({
-            where: { appointmentDate }
-        });
-
-        if (dailyCount >= 13) {
-            return NextResponse.json({ message: 'Le salon est complet pour cette journée (max 13 clients), veuillez réserver un autre jour.' }, { status: 403 });
-        }
-
-        // 2. Validate working hours for all slots
-        for (const slot of timeSlots) {
-            if (!slot.includes(' - ')) {
                 return NextResponse.json({ message: `Format de créneau invalide : ${slot}` }, { status: 400 });
             }
             const [start, end] = slot.split(' - ');
@@ -183,7 +89,6 @@ export async function POST(request: Request) {
         });
 
         if (!user) {
-            console.log('User not found, creating new user:', email);
             user = await prisma.user.create({
                 data: {
                     email,
@@ -198,7 +103,6 @@ export async function POST(request: Request) {
             timeSlots.map(async (slot) => {
                 const [startTime, endTime] = slot.split(' - ');
                 
-                // Find the first available post (1 to 4)
                 let assignedPost: number | null = null;
                 for (let p = 1; p <= 4; p++) {
                     const existing = await prisma.appointment.findFirst({
@@ -232,12 +136,23 @@ export async function POST(request: Request) {
                 });
             })
         );
-        console.log('Appointments created successfully');
         return NextResponse.json({ appointments }, { status: 201 });
 
-    } catch (error) {
-        console.error('Error in POST API:', error);
-        return NextResponse.json({ error: 'Internal Server Error', details: error instanceof Error ? error.message : 'Unknown error' }, { status: 500 });
+    } catch (error: any) {
+        console.error('Detailed Booking Error:', error);
+        
+        if (error.code === 'P2002') {
+            return NextResponse.json({ 
+                message: 'Ce créneau vient d\'être pris par un autre client. Veuillez choisir un autre horaire.', 
+                details: error.meta?.target 
+            }, { status: 409 });
+        }
+
+        return NextResponse.json({ 
+            error: 'Internal Server Error', 
+            message: error.message || 'Une erreur inattendue est survenue',
+            code: error.code 
+        }, { status: 500 });
     }
 }
 
