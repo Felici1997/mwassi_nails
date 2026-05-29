@@ -49,12 +49,113 @@ async function isExpired(id: string): Promise<boolean> {
 
 export async function POST(request: Request) {
     try {
-        const { email, serviceId, staffId, appointmentDate, timeSlots } = await request.json();
+        const body = await request.json();
+        const { email, serviceId, staffId, appointmentDate, timeSlots } = body;
         console.log('Booking request received:', { email, serviceId, appointmentDate, timeSlots });
 
         if (!email || !serviceId || !appointmentDate || !timeSlots || !Array.isArray(timeSlots)) {
             return NextResponse.json({ message: 'Tous les champs sont requis et timeSlots doit être un tableau.' }, { status: 400 });
         }
+
+        // 0. Verify service exists
+        const service = await prisma.service.findUnique({ where: { id: serviceId } });
+        if (!service) {
+            return NextResponse.json({ message: 'Le service sélectionné n\'existe pas.' }, { status: 404 });
+        }
+
+        // 1. Check Daily Quota (Max 13 clients per day)
+        const dailyCount = await prisma.appointment.count({
+            where: { appointmentDate }
+        });
+
+        if (dailyCount >= 13) {
+            return NextResponse.json({ message: 'Le salon est complet pour cette journée (max 13 clients), veuillez réserver un autre jour.' }, { status: 403 });
+        }
+
+        // 2. Validate working hours for all slots
+        for (const slot of timeSlots) {
+            if (!slot.includes(' - ')) {
+                return NextResponse.json({ message: \`Format de créneau invalide : \${slot}\` }, { status: 400 });
+            }
+            const [start, end] = slot.split(' - ');
+            if (!isWithinWorkingHours(start, end)) {
+                return NextResponse.json({ message: \`Le créneau \${slot} est en dehors des heures d'ouverture (08:00 - 19:00).\` }, { status: 400 });
+            }
+        }
+
+        // Auto-create user if they don't exist in the DB
+        let user = await prisma.user.findUnique({
+            where: { email },
+        });
+
+        if (!user) {
+            user = await prisma.user.create({
+                data: {
+                    email,
+                    givenName: 'Client',
+                    familyName: 'Kinde'
+                }
+            });
+        }
+
+        // 3. Create appointments and assign postNumber
+        const appointments = await Promise.all(
+            timeSlots.map(async (slot) => {
+                const [startTime, endTime] = slot.split(' - ');
+                
+                let assignedPost: number | null = null;
+                for (let p = 1; p <= 4; p++) {
+                    const existing = await prisma.appointment.findFirst({
+                        where: {
+                            appointmentDate,
+                            startTime,
+                            postNumber: p
+                        }
+                    });
+                    if (!existing) {
+                        assignedPost = p;
+                        break;
+                    }
+                }
+
+                if (assignedPost === null) {
+                    throw new Error(\`Le créneau \${slot} est malheureusement complet (tous les postes sont occupés).\`);
+                }
+
+                return prisma.appointment.create({
+                    data: {
+                        userId: user.id,
+                        serviceId,
+                        staffId,
+                        appointmentDate,
+                        startTime,
+                        endTime,
+                        postNumber: assignedPost,
+                        status: 'PENDING'
+                    }
+                });
+            })
+        );
+        return NextResponse.json({ appointments }, { status: 201 });
+
+    } catch (error: any) {
+        console.error('Detailed Booking Error:', error);
+        
+        // Special handling for Prisma Unique Constraint errors (P2002)
+        if (error.code === 'P2002') {
+            return NextResponse.json({ 
+                message: 'Ce créneau vient d\'être pris par un autre client. Veuillez choisir un autre horaire.', 
+                details: error.meta?.target 
+            }, { status: 409 });
+        }
+
+        return NextResponse.json({ 
+            error: 'Internal Server Error', 
+            message: error.message || 'Une erreur inattendue est survenue',
+            code: error.code 
+        }, { status: 500 });
+    }
+}
 
         // 1. Check Daily Quota (Max 13 clients per day)
         const dailyCount = await prisma.appointment.count({
