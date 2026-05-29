@@ -98,7 +98,7 @@ export async function POST(request: Request) {
                 const [startTime, endTime] = slot.split(' - ');
                 
                 // Find the first available post (1 to 4)
-                let assignedPost = 1;
+                let assignedPost: number | null = null;
                 for (let p = 1; p <= 4; p++) {
                     const existing = await prisma.appointment.findFirst({
                         where: {
@@ -113,18 +113,22 @@ export async function POST(request: Request) {
                     }
                 }
 
-                                return prisma.appointment.create({
-                                    data: {
-                                        userId: user.id,
-                                        serviceId,
-                                        staffId,
-                                        appointmentDate,
-                                        startTime,
-                                        endTime,
-                                        postNumber: assignedPost,
-                                        status: 'PENDING'
-                                    }
-                                });
+                if (assignedPost === null) {
+                    throw new Error(`Le créneau ${slot} est malheureusement complet (tous les postes sont occupés).`);
+                }
+
+                return prisma.appointment.create({
+                    data: {
+                        userId: user.id,
+                        serviceId,
+                        staffId,
+                        appointmentDate,
+                        startTime,
+                        endTime,
+                        postNumber: assignedPost,
+                        status: 'PENDING'
+                    }
+                });
             })
         );
         console.log('Appointments created successfully');
