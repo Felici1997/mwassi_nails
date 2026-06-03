@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
-
-export const dynamic = 'force-dynamic';
+import dayjs from 'dayjs';
 
 export async function GET(request: Request) {
     try {
@@ -12,44 +11,56 @@ export async function GET(request: Request) {
             return NextResponse.json({ error: 'salonId manquant' }, { status: 400 });
         }
 
-        const today = new Date();
-        const day = String(today.getDate()).padStart(2, '0');
-        const month = String(today.getMonth() + 1).padStart(2, '0');
-        const year = today.getFullYear();
-        const todayStr = `${day}/${month}/${year}`;
+        const today = dayjs().format('DD/MM/YYYY');
 
+        // 1. Total Services
+        const totalServices = await prisma.service.count({
+            where: { salonId }
+        });
 
-        const [totalServices, appointmentsToday] = await Promise.all([
-            prisma.service.count({
-                where: { salonId }
-            }),
-            prisma.appointment.count({
-                where: {
-                    service: { salonId },
-                    appointmentDate: todayStr
-                }
-            }),
-        ]);
-
-        // Correct way to get revenue:
-        const appointmentsWithService = await prisma.appointment.findMany({
+        // 2. Appointments Today
+        const appointmentsToday = await prisma.appointment.count({
             where: {
-                service: { salonId }
+                appointmentDate: today,
+                salonId: { // Wait, appointment doesn't have salonId directly. It has serviceId.
+                    // We need to filter through service.
+                }
+            }
+        });
+        // Correction: Filter by service's salonId
+        const appointmentsTodayCount = await prisma.appointment.count({
+            where: {
+                appointmentDate: today,
+                service: {
+                    salonId: salonId
+                }
+            }
+        });
+
+        // 3. Total Revenue (Sum of prices of all appointments for this salon)
+        const appointments = await prisma.appointment.findMany({
+            where: {
+                service: {
+                    salonId: salonId
+                }
             },
             include: {
                 service: true
             }
         });
 
-        const totalRevenue = appointmentsWithService.reduce((acc, app) => acc + app.service.price, 0);
+        const totalRevenue = appointments.reduce((sum, app) => {
+            return sum + (app.service.price || 0);
+        }, 0);
 
         return NextResponse.json({
             totalServices,
-            appointmentsToday,
+            appointmentsToday: appointmentsTodayCount,
             totalRevenue
         }, { status: 200 });
-    } catch (error) {
-        console.error('Error fetching stats:', error);
-        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+
+    } catch (error: any) {
+        console.error('Error fetching admin stats:', error);
+        return NextResponse.json({ error: 'Internal Server Error', details: error.message }, { status: 500 });
     }
 }

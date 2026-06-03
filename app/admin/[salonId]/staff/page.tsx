@@ -12,6 +12,7 @@ interface StaffMember {
     givenName: string | null;
     familyName: string | null;
     email: string;
+    role: string;
   };
 }
 
@@ -103,7 +104,9 @@ const ManageStaff = ({ params }: { params: { salonId: string } }) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           id: editingStaff.id,
-          name: editingStaff.name
+          name: editingStaff.name,
+          role: editingStaff.user.role,
+          userId: editingStaff.userId
         })
       })
 
@@ -174,37 +177,43 @@ const ManageStaff = ({ params }: { params: { salonId: string } }) => {
                     <table className='table table-zebra w-full'>
                         <thead className='bg-base-200'>
                             <tr>
-                                <th className='p-4'>Nom</th>
-                                <th className='p-4'>Email</th>
-                                <th className='p-4 text-center'>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {filteredStaff.length > 0 ? (
-                                filteredStaff.map(member => (
-                                    <tr key={member.id}>
-                                        <td className='p-4'>
-                                            <div className='font-bold'>{member.name}</div>
-                                        </td>
-                                        <td className='p-4'>
-                                            <div className='text-sm text-gray-500'>{member.user.email}</div>
-                                        </td>
-                                        <td className='p-4 flex justify-center gap-2'>
-                                            <button onClick={() => setEditingStaff(member)} className='btn btn-ghost btn-xs text-primary'><Edit3 className='w-4' /></button>
-                                            <button onClick={() => handleDelete(member.id)} className='btn btn-ghost btn-xs text-error'><Trash2 className='w-4' /></button>
-                                        </td>
-                                    </tr>
-                                ))
-                            ) : (
-                                <tr>
-                                    <td colSpan={3} className='text-center py-10 text-gray-500 italic'>
-                                        Aucun membre trouvé.
-                                    </td>
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
-                </div>
+                                 <th className='p-4'>Nom</th>
+                                                                <th className='p-4'>Email</th>
+                                                                <th className='p-4'>Rôle</th>
+                                                                <th className='p-4 text-center'>Actions</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {filteredStaff.length > 0 ? (
+                                                                filteredStaff.map(member => (
+                                                                    <tr key={member.id}>
+                                                                        <td className='p-4'>
+                                                                            <div className='font-bold'>{member.name}</div>
+                                                                        </td>
+                                                                        <td className='p-4'>
+                                                                            <div className='text-sm text-gray-500'>{member.user.email}</div>
+                                                                        </td>
+                                                                        <td className='p-4'>
+                                                                            <span className={`badge ${member.user.role === 'ADMIN' ? 'badge-secondary' : 'badge-ghost'}`}>
+                                                                                {member.user.role}
+                                                                            </span>
+                                                                        </td>
+                                                                        <td className='p-4 flex justify-center gap-2'>
+                                                                            <button onClick={() => setEditingStaff(member)} className='btn btn-ghost btn-xs text-primary'><Edit3 className='w-4' /></button>
+                                                                            <button onClick={() => handleDelete(member.id)} className='btn btn-ghost btn-xs text-error'><Trash2 className='w-4' /></button>
+                                                                        </td>
+                                                                    </tr>
+                                                                ))
+                                                            ) : (
+                                                                <tr>
+                                                                    <td colSpan={4} className='text-center py-10 text-gray-500 italic'>
+                                                                        Aucun membre trouvé.
+                                                                    </td>
+                                                                </tr>
+                                                            )}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
 
 
         {/* Modal Create */}
@@ -261,6 +270,17 @@ const ManageStaff = ({ params }: { params: { salonId: string } }) => {
                     onChange={e => setEditingStaff({...editingStaff, name: e.target.value})}
                     required
                   />
+                </div>
+                <div className='form-control'>
+                  <label className='label'>Rôle</label>
+                  <select 
+                    className='select select-bordered'
+                    value={editingStaff.user.role}
+                    onChange={e => setEditingStaff({...editingStaff, user: {...editingStaff.user, role: e.target.value}})}
+                  >
+                    <option value="USER">Utilisateur</option>
+                    <option value="ADMIN">Administrateur</option>
+                  </select>
                 </div>
                 <div className='modal-action'>
                   <button type='button' className='btn' onClick={() => setEditingStaff(null)}><X className='w-4' /> Annuler</button>

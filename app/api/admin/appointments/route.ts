@@ -125,8 +125,25 @@ export async function DELETE(request: Request) {
     try {
         const { id } = await request.json();
         if (!id) {
-            return NextResponse.json({ message: "L'ID du rendez-vous est requis" }, { status: 400 });
+            return NextResponse.json({ message: 'L\'ID du rendez-vous est requis' }, { status: 400 });
         }
+
+        if (await isExpired(id)) {
+            return NextResponse.json({ message: "Annulation impossible : le rendez-vous est passé depuis plus de 5h." }, { status: 403 });
+        }
+
+        // Instead of deleting, we mark it as CANCELLED
+        await prisma.appointment.update({
+            where: { id },
+            data: { status: 'CANCELLED' }
+        });
+
+        return NextResponse.json({ message: 'Rendez-vous annulé avec succès' }, { status: 200 });
+        } catch (error) {
+            console.error('Error cancelling appointment:', error);
+            return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+        }
+}
 
         await prisma.appointment.delete({
             where: { id }

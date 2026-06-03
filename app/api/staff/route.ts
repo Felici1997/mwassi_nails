@@ -17,7 +17,8 @@ export async function GET(request: Request) {
                     select: {
                         givenName: true,
                         familyName: true,
-                        email: true
+                        email: true,
+                        role: true
                     }
                 }
             }
@@ -55,16 +56,26 @@ export async function POST(request: Request) {
 
 export async function PATCH(request: Request) {
     try {
-        const { id, name } = await request.json();
+        const { id, name, role, userId } = await request.json();
 
-        if (!id || !name) {
-            return NextResponse.json({ error: 'ID et nom sont requis' }, { status: 400 });
+        if (!id) {
+            return NextResponse.json({ error: 'ID est requis' }, { status: 400 });
         }
+
+        const updateData: any = {};
+        if (name) updateData.name = name;
 
         const updatedStaff = await prisma.staff.update({
             where: { id },
-            data: { name }
+            data: updateData
         });
+
+        if (role && userId) {
+            await prisma.user.update({
+                where: { id: userId },
+                data: { role }
+            });
+        }
 
         return NextResponse.json({ message: "Membre mis à jour", updatedStaff }, { status: 200 });
     } catch (error) {
