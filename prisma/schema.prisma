@@ -79,7 +79,7 @@ model Appointment {
   startTime       String
   endTime         String
   postNumber      Int      // Number of the workstation (1 to 4)
-  status          String   @default("PENDING") // PENDING, CONFIRMED, REJECTED
+  status          String   @default("PENDING") // PENDING, CONFIRMED, REJECTED, CANCELLED
   rejectionNote   String?
   
   @@unique([postNumber, appointmentDate, startTime])
