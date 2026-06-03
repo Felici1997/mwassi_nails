@@ -116,12 +116,14 @@ const AdminAppointments = ({ params }: { params: { salonId: string } }) => {
                 body: JSON.stringify({ ...editFormData, appointmentDate: formattedDate })
             })
             
+            const data = await response.json();
+
             if (response.ok) {
                 setNotification('Rendez-vous mis à jour !')
                 setEditingAppointment(null)
                 fetchData()
             } else {
-                setNotification('Erreur lors de la mise à jour')
+                setNotification(data.message || 'Erreur lors de la mise à jour')
             }
         } catch (error) {
             setNotification('Erreur serveur')
