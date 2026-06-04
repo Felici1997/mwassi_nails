@@ -3,9 +3,9 @@
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 import { CalendarCheck, Menu, X } from 'lucide-react'
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
     const { user } = useKindeBrowserClient()
@@ -15,32 +15,36 @@ const Navbar = () => {
     const [role, setRole] = useState<string | null>(null)
 
     useEffect(() => {
-        if (user?.email === 'mrpfouapo@gmail.com') {
-            setRole('ADMIN');
-            setLoading(false);
-        } else if (user) {
-            // Fallback to API for other users
+        console.log("--- Navbar Debug: checking user status ---");
+        console.log("Kinde User:", user);
+
+        if (user) {
             const fetchRole = async () => {
                 try {
+                    console.log(`DEBUG: Fetching role for ${user.email}...`);
                     const res = await fetch('/api/me');
                     const data = await res.json();
+                    console.log("DEBUG: API Response for /api/me:", data);
                     if (res.ok) {
                         setRole(data.role);
+                        console.log(`DEBUG: Role set to: ${data.role}`);
+                    } else {
+                        console.error("DEBUG: API error:", data.error);
                     }
                 } catch (e) {
-                    console.error("Failed to fetch role", e);
+                    console.error("DEBUG: Failed to fetch role:", e);
                 } finally {
                     setLoading(false);
                 }
             };
             fetchRole();
         } else {
+            console.log("DEBUG: No Kinde user found");
             setLoading(false);
         }
     }, [user])
 
     const isActive = (link: string) => pathname === link
-
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -65,13 +69,10 @@ const Navbar = () => {
                             <div className=' flex justify-end mt-2'>
                                 <div className="badge badge-ghost">{user?.email}</div>
                             </div>
-                        )
-
-                        }
+                        )}
                     </div>
 
                     <div className=' hidden md:flex items-center space-x-6'>
-
                         <Link href={'/dashboard'} className={`link link-hover font-extrabold ${isActive('/dashboard') ? 'text-secondary' : ''} `}>
                             Réserver
                         </Link>
@@ -79,7 +80,7 @@ const Navbar = () => {
                         <Link href={'/my-appointments'} className={`link link-hover font-extrabold ${isActive('/my-appointments') ? 'text-secondary' : ''} `}>
                             Mes rendez-vous
                         </Link>
-                        
+
                         <Link href={'/profile'} className={`link link-hover font-extrabold ${isActive('/profile') ? 'text-secondary' : ''} `}>
                             Mon Profil
                         </Link>
@@ -89,9 +90,6 @@ const Navbar = () => {
                                 Admin
                             </Link>
                         )}
-
-
-
                     </div>
 
                     <LogoutLink className='btn btn-secondary btn-sm hidden md:flex'>Déconnexion</LogoutLink>
