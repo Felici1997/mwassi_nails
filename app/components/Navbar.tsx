@@ -15,31 +15,28 @@ const Navbar = () => {
     const [role, setRole] = useState<string | null>(null)
 
     useEffect(() => {
-        console.log("--- Navbar Debug: checking user status ---");
-        console.log("Kinde User:", user);
-
         if (user) {
             const fetchRole = async () => {
                 try {
-                    console.log(`DEBUG: Fetching role for ${user.email}...`);
-                    const res = await fetch('/api/me');
+                    console.log(`DEBUG CLIENT: Fetching role for ${user.email}...`);
+                    const res = await fetch('/api/users/me');
                     const data = await res.json();
-                    console.log("DEBUG: API Response for /api/me:", data);
+                    console.log("DEBUG CLIENT: API Response:", data);
                     if (res.ok) {
                         setRole(data.role);
-                        console.log(`DEBUG: Role set to: ${data.role}`);
+                        console.log(`DEBUG CLIENT: Role set to: ${data.role}`);
                     } else {
-                        console.error("DEBUG: API error:", data.error);
+                        console.error("DEBUG CLIENT: API error:", data.error);
                     }
                 } catch (e) {
-                    console.error("DEBUG: Failed to fetch role:", e);
+                    console.error("DEBUG CLIENT: Failed to fetch role:", e);
                 } finally {
                     setLoading(false);
                 }
             };
             fetchRole();
         } else {
-            console.log("DEBUG: No Kinde user found");
+            console.log("DEBUG CLIENT: No Kinde user found");
             setLoading(false);
         }
     }, [user])

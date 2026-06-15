@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images : {
-        domains : ['files.edgestore.dev'] ,
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'files.edgestore.dev',
+            },
+        ],
     },
     eslint: {
         // Warning: This allows production builds to successfully complete even if

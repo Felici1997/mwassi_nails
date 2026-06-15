@@ -1,19 +1,10 @@
 import { NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
+import { UserService } from '@/services/user.service';
+import { SalonService } from '@/services/salon.service';
 
 export async function GET() {
   try {
-    const users = await prisma.user.findMany({
-      select: {
-        id: true,
-        email: true,
-        givenName: true,
-        familyName: true,
-      },
-      orderBy: {
-        email: 'asc'
-      }
-    });
+    const users = await UserService.getAllUsers();
     return NextResponse.json({ users }, { status: 200 });
   } catch (error) {
     console.error('Error fetching users:', error);
@@ -23,54 +14,21 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const { email, famillyName, givenName } = await request.json();
+    const { email, familyName, givenName } = await request.json();
 
-    if (!email || !famillyName || !givenName) {
+    if (!email || !familyName || !givenName) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    let user = await prisma.user.findUnique({
-      where: { email },
-    });
-
-    if (!user) {
-      user = await prisma.user.create({
-        data: {
-          email,
-          famillyName,
-          givenName,
-        },
-      });
-    } else {
-      if (user.famillyName == null || user.givenName == null) {
-        user = await prisma.user.update({
-          where: { email },
-          data: {
-            famillyName: user.famillyName ?? famillyName,
-            givenName: user.givenName ?? givenName,
-          },
-        });
-      }
-    }
-
-    const salon = await prisma.salon.findUnique({
-      where: { name: "Mwassi Nails" }
-    });
-
-    if (salon) {
-      return NextResponse.json({ salonId: salon.id });
-    } else {
-      // In case the salon doesn't exist yet, create it
-      const newSalon = await prisma.salon.create({
-        data: {
-          name: "Mwassi Nails",
-          createdBy: { connect: { id: user.id } }
-        }
-      });
-      return NextResponse.json({ salonId: newSalon.id });
-    }
+    const user = await UserService.upsertUser({ email, givenName, familyName });
+    
+    // Use SalonService to ensure the default salon exists and get its ID
+    const salon = await SalonService.getMwassiSalon();
+    return NextResponse.json({ salonId: salon.id });
   } catch (error) {
     console.error('Error in API:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
+
+

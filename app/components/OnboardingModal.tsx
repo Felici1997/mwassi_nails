@@ -19,7 +19,7 @@ export default function OnboardingModal() {
   useEffect(() => {
     async function checkProfile() {
       try {
-        const res = await fetch('/api/me');
+        const res = await fetch('/api/users/me');
         const data = await res.json();
         if (data.isAuthenticated && !data.isProfileComplete) {
           setIsOpen(true);
@@ -46,7 +46,7 @@ export default function OnboardingModal() {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('/api/user/profile', {
+       const res = await fetch('/api/users/profile', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
