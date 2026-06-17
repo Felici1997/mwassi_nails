@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Wrapper from '@/app/components/Wrapper'
 import Link from 'next/link'
-import { LayoutDashboard, Scissors, CalendarDays, Users, Monitor } from 'lucide-react'
+import { Scissors, CalendarDays, Users } from 'lucide-react'
 
 
 interface Stats {
@@ -36,12 +36,7 @@ const AdminDashboard = () => {
             <div className='p-5'>
                 <h1 className='text-3xl font-bold mb-8'>Tableau de Bord Administrateur</h1>
                 
-                <div className='grid grid-cols-1 md:grid-cols-4 gap-6'>
-                    <Link href={`/admin/board`} className='p-6 bg-zinc-900 text-yellow-400 rounded-2xl shadow-lg hover:scale-105 transition-transform flex flex-col items-center text-center border-2 border-yellow-500'>
-                        <Monitor className='w-12 h-12 mb-4' />
-                        <h2 className='text-xl font-bold'>Tableau d'affichage</h2>
-                        <p className='text-sm opacity-80'>Vue Aéroport (TV/Tablette)</p>
-                    </Link>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                     <Link href={`/admin/appointments`} className='p-6 bg-secondary text-white rounded-2xl shadow-lg hover:scale-105 transition-transform flex flex-col items-center text-center'>
                         <CalendarDays className='w-12 h-12 mb-4' />
                         <h2 className='text-xl font-bold'>Gérer les RDV</h2>

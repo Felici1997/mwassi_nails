@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    const user = await UserService.upsertUser({ email, givenName, familyName });
+    await UserService.upsertUser({ email, givenName, familyName });
     
     // Use SalonService to ensure the default salon exists and get its ID
     const salon = await SalonService.getMwassiSalon();

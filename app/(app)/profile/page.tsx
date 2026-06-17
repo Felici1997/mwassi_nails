@@ -31,7 +31,7 @@ export default function ProfilePage() {
             profession: data.profile.profession || '',
           });
         }
-      } catch (error) {
+      } catch {
         toast.error('Failed to load profile');
       } finally {
         setLoading(false);

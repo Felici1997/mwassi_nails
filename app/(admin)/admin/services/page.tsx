@@ -6,7 +6,7 @@ import { Trash2, Edit3, Save, X, PlusCircle, Search } from 'lucide-react'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 
 const ManageServices = () => {
-    const { user } = useKindeBrowserClient()
+    useKindeBrowserClient()
     const [services, setServices] = useState<any[]>([])
     const [loading, setLoading] = useState(true)
     const [editingService, setEditingService] = useState<any>(null)
@@ -37,7 +37,7 @@ const ManageServices = () => {
             } else {
                 setNotification('Erreur lors de la suppression')
             }
-        } catch (err) {
+        } catch {
             setNotification('Erreur serveur')
         }
     }
@@ -81,7 +81,7 @@ const ManageServices = () => {
             } else {
                 setNotification('Erreur lors de la mise à jour')
             }
-        } catch (err) {
+        } catch {
             setNotification('Erreur serveur')
         }
     }
@@ -110,7 +110,7 @@ const ManageServices = () => {
                 const result = await response.json()
                 setNotification(result.message || 'Erreur lors de la création')
             }
-        } catch (err) {
+        } catch {
             setNotification('Erreur serveur')
         }
     }

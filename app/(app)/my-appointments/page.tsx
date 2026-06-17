@@ -66,7 +66,7 @@ const MyAppointments = () => {
       } else {
         setNotification('Erreur lors de l\'annulation.')
       }
-    } catch (err) {
+    } catch {
       setNotification('Erreur serveur.')
     }
   }
@@ -104,7 +104,7 @@ const MyAppointments = () => {
         const errorData = await response.json()
         setNotification(errorData.message || 'Erreur lors de la mise à jour.')
       }
-    } catch (err) {
+    } catch {
       setNotification('Erreur serveur.')
     }
   }

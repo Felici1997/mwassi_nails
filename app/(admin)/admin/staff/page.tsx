@@ -90,7 +90,7 @@ const ManageStaff = () => {
         const result = await response.json()
         setNotification(result.message || 'Erreur lors de la création')
       }
-    } catch (err) {
+    } catch {
       setNotification('Erreur serveur')
     }
   }
@@ -118,7 +118,7 @@ const ManageStaff = () => {
       } else {
         setNotification('Erreur lors de la mise à jour')
       }
-    } catch (err) {
+    } catch {
       setNotification('Erreur serveur')
     }
   }
@@ -139,7 +139,7 @@ const ManageStaff = () => {
       } else {
         setNotification('Erreur lors de la suppression')
       }
-    } catch (err) {
+    } catch {
       setNotification('Erreur serveur')
     }
   }

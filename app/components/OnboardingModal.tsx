@@ -42,6 +42,16 @@ export default function OnboardingModal() {
     checkProfile();
   }, []);
 
+  // Bloquer le scroll de la page quand le modal est ouvert
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -57,7 +67,7 @@ export default function OnboardingModal() {
         throw new Error(errorData.error?.[0]?.message || 'Failed to update profile');
       }
 
-      toast.success('Profile updated successfully!');
+      toast.success('Profil mis à jour !');
       setIsOpen(false);
       router.refresh();
     } catch (error: any) {
@@ -71,7 +81,7 @@ export default function OnboardingModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4" role="dialog" aria-modal="true">
       <div className="bg-base-100 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden border border-base-300">
         <div className="p-6 border-b border-base-200 bg-base-200/50">
           <h2 className="text-2xl font-bold text-base-content">Complétez Votre Profil</h2>
@@ -81,10 +91,11 @@ export default function OnboardingModal() {
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text font-medium">Nom Complet</span>
+              <span className="label-text font-medium">Nom Complet <span className="text-error">*</span></span>
             </label>
             <input 
               type="text" 
+              required
               className="input input-bordered w-full" 
               placeholder="Jean Dupont"
               value={formData.fullName}
@@ -94,7 +105,7 @@ export default function OnboardingModal() {
 
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text font-medium">Téléphone 1 (Obligatoire)</span>
+              <span className="label-text font-medium">Téléphone 1 <span className="text-error">*</span></span>
             </label>
             <input 
               type="tel" 
@@ -146,7 +157,7 @@ export default function OnboardingModal() {
 
           <button 
             type="submit" 
-            disabled={loading || !formData.phone1}
+            disabled={loading || !formData.phone1 || !formData.fullName}
             className="btn btn-primary w-full mt-4"
           >
             {loading ? <span className="loading loading-spinner"></span> : 'Continuer'}

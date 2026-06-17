@@ -8,7 +8,7 @@ export async function GET(request: Request) {
         const salonId = searchParams.get('salonId') || await SalonService.getMwassiSalonId();
         const staff = await StaffService.getStaffBySalon(salonId);
         return NextResponse.json({ staff }, { status: 200 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
         const finalSalonId = salonId || await SalonService.getMwassiSalonId();
         const staffMember = await StaffService.addStaff({ name, salonId: finalSalonId, userId });
         return NextResponse.json({ message: "Membre du personnel ajouté", staffMember }, { status: 201 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
@@ -33,7 +33,7 @@ export async function PATCH(request: Request) {
         if (!id) return NextResponse.json({ error: 'ID est requis' }, { status: 400 });
         const updatedStaff = await StaffService.updateStaff(id, { name, role, userId });
         return NextResponse.json({ message: "Membre mis à jour", updatedStaff }, { status: 200 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
@@ -44,7 +44,7 @@ export async function DELETE(request: Request) {
         if (!id) return NextResponse.json({ error: 'ID requis' }, { status: 400 });
         await StaffService.removeStaff(id);
         return NextResponse.json({ message: "Membre supprimé" }, { status: 200 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }

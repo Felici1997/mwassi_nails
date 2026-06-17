@@ -92,7 +92,7 @@ const AdminAppointments = () => {
             } else {
                 setNotification('Erreur lors de l\'annulation')
             }
-        } catch (error) {
+        } catch {
             setNotification('Erreur serveur')
         }
     }
@@ -132,7 +132,7 @@ const AdminAppointments = () => {
             } else {
                 setNotification(data.message || 'Erreur lors de la mise à jour')
             }
-        } catch (error) {
+        } catch {
             setNotification('Erreur serveur')
         }
     }
@@ -161,7 +161,7 @@ const AdminAppointments = () => {
             } else {
                 setNotification('Erreur lors de la mise à jour du statut')
             }
-        } catch (error) {
+        } catch {
             setNotification('Erreur serveur')
         }
     }

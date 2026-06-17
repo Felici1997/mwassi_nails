@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     }
 }
 
-export async function GET(_request: Request) {
+export async function GET() {
     try {
         const { services, salonName } = await ServiceService.getServicesForSalon();
         return NextResponse.json({ services, salonName }, { status: 200 });
