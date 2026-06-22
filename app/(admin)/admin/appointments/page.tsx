@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 
 interface Appointment {
   id: string;
-  user: { givenName: string | null; familyName: string | null; email: string };
+  user: { givenName: string | null; familyName: string | null; fullName: string | null; email: string };
   service: { name: string; id: string };
   staff: { name: string; id: string };
   appointmentDate: string;
@@ -247,7 +247,7 @@ const AdminAppointments = () => {
             <div key={app.id} className={`border border-base-200 rounded-lg p-4 bg-white ${isPast ? 'opacity-60' : ''}`}>
                 <div className='flex justify-between items-start gap-2 mb-2'>
                     <div>
-                        <p className='font-semibold'>{app.user?.givenName || 'Client'} {app.user?.familyName || ''}</p>
+                        <p className='font-semibold'>{app.user?.fullName || app.user?.givenName || 'Client'}</p>
                         <p className='text-xs text-gray-400'>{app.user?.email}</p>
                     </div>
                     {renderStatusBadge(app, isPast)}
@@ -394,7 +394,7 @@ const AdminAppointments = () => {
     }
 
     const filteredAppointments = appointments.filter(app => {
-        const fullName = `${app.user?.givenName || ''} ${app.user?.familyName || ''}`.toLowerCase();
+        const fullName = (app.user?.fullName || `${app.user?.givenName || ''} ${app.user?.familyName || ''}`).toLowerCase();
         const email = app.user?.email.toLowerCase() || '';
         return fullName.includes(searchQuery.toLowerCase()) || email.includes(searchQuery.toLowerCase());
     });
