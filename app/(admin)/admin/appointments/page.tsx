@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react'
 import Wrapper from '@/app/components/Wrapper'
 import Notification from '@/app/components/Notification'
 import Image from 'next/image'
-import { Calendar, Clock, User, Trash2, Edit3, CheckCircle2, Clock4, Search, X, Save, ChevronLeft, ChevronRight, FileText } from 'lucide-react'
+import { Calendar, Clock, User, Trash2, Edit3, CheckCircle2, Clock4, Search, X, Save, ChevronLeft, ChevronRight, FileText, Phone } from 'lucide-react'
 import dayjs from 'dayjs'
 
 interface Appointment {
   id: string;
-  user: { givenName: string | null; familyName: string | null; fullName: string | null; email: string };
+  user: { givenName: string | null; familyName: string | null; fullName: string | null; email: string; phone1: string | null };
   service: { name: string; id: string };
   staff: { name: string; id: string };
   appointmentDate: string;
@@ -248,7 +248,7 @@ const AdminAppointments = () => {
                 <div className='flex justify-between items-start gap-2 mb-2'>
                     <div>
                         <p className='font-semibold'>{app.user?.fullName || app.user?.givenName || 'Client'}</p>
-                        <p className='text-xs text-gray-400'>{app.user?.email}</p>
+                        <p className='text-xs text-gray-400 flex items-center gap-1'><Phone className='w-3 h-3' /> {app.user?.phone1 || '—'}</p>
                     </div>
                     {renderStatusBadge(app, isPast)}
                 </div>
