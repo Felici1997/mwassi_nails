@@ -91,15 +91,15 @@ const MyAppointments = () => {
   const renderAppointmentCard = (app: Appointment, isPast: boolean) => {
     const disabled = isActionDisabled(app.appointmentDate, app.startTime);
     return (
-      <div key={app.id} className={`bg-white p-4 rounded-xl shadow-sm border border-base-200 flex justify-between items-center ${isPast ? 'opacity-50 grayscale' : ''} ${disabled ? 'opacity-60' : ''}`}>
-        <div className='flex items-center gap-4'>
-          <div className='bg-secondary/10 p-3 rounded-full text-secondary'>
+      <div key={app.id} className={`bg-white p-4 rounded-xl shadow-sm border border-base-200 ${isPast ? 'opacity-50 grayscale' : ''} ${disabled ? 'opacity-60' : ''}`}>
+        <div className='flex items-start gap-3'>
+          <div className='bg-secondary/10 p-3 rounded-full text-secondary shrink-0'>
             <Calendar className='w-5 h-5' />
           </div>
-          <div>
-            <div className='flex items-center gap-2'>
-              <p className='font-bold'>{app.service.name}</p>
-              <span className={`badge badge-sm ${
+          <div className='min-w-0 flex-1'>
+            <div className='flex items-center gap-2 flex-wrap'>
+              <p className='font-bold text-sm sm:text-base truncate'>{app.service.name}</p>
+              <span className={`badge badge-sm shrink-0 ${
                 app.status === 'CONFIRMED' ? 'badge-success' : 
                 app.status === 'REJECTED' ? 'badge-error' : 
                 'badge-ghost'
@@ -107,36 +107,32 @@ const MyAppointments = () => {
                 {app.status === 'CONFIRMED' ? 'Confirmé' : app.status === 'REJECTED' ? 'Rejeté' : 'En attente'}
               </span>
             </div>
-            <p className='text-sm text-gray-500'>{app.appointmentDate}</p>
+            <p className='text-xs text-gray-500 mt-1'>{app.appointmentDate}</p>
             {app.status === 'REJECTED' && app.rejectionNote && (
               <p className='text-xs text-error italic mt-1'>Note: {app.rejectionNote}</p>
             )}
             {app.notes && (
               <p className='text-xs text-base-content/60 italic mt-1 flex items-center gap-1'>
-                <FileText className='w-3 h-3' /> {app.notes}
+                <FileText className='w-3 h-3 shrink-0' /> {app.notes}
               </p>
             )}
             {app.imageUrl && (
               <Image src={app.imageUrl} alt='Photo du service' width={80} height={80} className='rounded mt-2 object-cover w-20 h-20' />
             )}
           </div>
-        </div>
-        <div className='flex items-center gap-6'>
-          <div className='text-right'>
-            <p className='font-semibold'>{app.startTime} - {app.endTime}</p>
-          </div>
-          {!isPast && (
-            <div className='flex gap-2'>
-              <button 
-                onClick={() => handleCancel(app.id)} 
-                disabled={disabled}
-                className='btn btn-ghost btn-sm text-error disabled:text-gray-400'
-              >
-                <Trash2 className='w-4' />
-              </button>
-            </div>
-          )}
           {getStatusIcon(app.appointmentDate, app.startTime)}
+        </div>
+        <div className='flex items-center justify-between mt-3 pt-3 border-t border-base-200'>
+          <p className='font-semibold text-xs sm:text-sm'>{app.startTime} - {app.endTime}</p>
+          {!isPast && (
+            <button 
+              onClick={() => handleCancel(app.id)} 
+              disabled={disabled}
+              className='btn btn-ghost btn-xs text-error disabled:text-gray-400'
+            >
+              <Trash2 className='w-4' /> Annuler
+            </button>
+          )}
         </div>
       </div>
     )

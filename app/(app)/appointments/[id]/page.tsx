@@ -37,7 +37,6 @@ const Page = ({ params }: { params: { id: string } }) => {
   const [mergedSlots, setMergedSlots] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [notes, setNotes] = useState('');
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
 
   const [notification, setNotification] = useState<string>('');
   const closeNotification = () => setNotification("");
@@ -158,14 +157,6 @@ const Page = ({ params }: { params: { id: string } }) => {
     }
   };
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onloadend = () => setImagePreview(reader.result as string);
-    reader.readAsDataURL(file);
-  };
-
   const handleAppointment = async () => {
     if (!user) {
       setNotification('Veuillez vous connecter pour réserver.');
@@ -182,8 +173,7 @@ const Page = ({ params }: { params: { id: string } }) => {
           staffId: null,
           appointmentDate: selectedDate.split('-').reverse().join('/'),
           timeSlots: mergedSlots,
-          notes: notes || undefined,
-          imageUrl: imagePreview || undefined
+          notes: notes || undefined
         })
       });
 
@@ -326,17 +316,10 @@ const Page = ({ params }: { params: { id: string } }) => {
                           rows={3}
                         />
                         <div className='flex items-center gap-3'>
-                          <label className='btn btn-outline btn-sm gap-2 cursor-pointer'>
+                          <label className='btn btn-outline btn-sm gap-2 cursor-not-allowed opacity-50'>
                             <ImageIcon className='w-4 h-4' />
-                            {imagePreview ? 'Changer la photo' : 'Ajouter une photo'}
-                            <input type='file' accept='image/*' className='hidden' onChange={handleImageChange} />
+                            Bientôt disponible
                           </label>
-                          {imagePreview && (
-                            <div className='relative'>
-                              <Image src={imagePreview} alt='Aperçu' width={60} height={60} className='rounded object-cover w-16 h-16' />
-                              <button className='absolute -top-2 -right-2 btn btn-xs btn-circle btn-error text-white' onClick={() => setImagePreview(null)}>✕</button>
-                            </div>
-                          )}
                         </div>
                       </div>
                     </details>
@@ -392,17 +375,10 @@ const Page = ({ params }: { params: { id: string } }) => {
                             rows={2}
                           />
                           <div className='flex items-center gap-3'>
-                            <label className='btn btn-outline btn-sm gap-2 cursor-pointer'>
+                            <label className='btn btn-outline btn-sm gap-2 cursor-not-allowed opacity-50'>
                               <ImageIcon className='w-4 h-4' />
-                              {imagePreview ? 'Changer' : 'Photo'}
-                              <input type='file' accept='image/*' className='hidden' onChange={handleImageChange} />
+                              Bientôt disponible
                             </label>
-                            {imagePreview && (
-                              <div className='relative'>
-                                <Image src={imagePreview} alt='Aperçu' width={50} height={50} className='rounded object-cover w-12 h-12' />
-                              <button className='absolute -top-2 -right-2 btn btn-xs btn-circle btn-error text-white' onClick={() => setImagePreview(null)}>✕</button>
-                              </div>
-                            )}
                           </div>
                         </div>
                       </details>
