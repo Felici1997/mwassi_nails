@@ -3,7 +3,7 @@ import { ServiceService } from '@/services/service.service';
 
 export async function POST(request: Request) {
     try {
-        const body = await request.json();
+        const body: { name?: string; price?: string; duration?: string; category?: string; description?: string } = await request.json();
         const { name, price, duration, category, description } = body;
 
         if (!name || !price || !duration) {
@@ -19,9 +19,9 @@ export async function POST(request: Request) {
         });
 
         return NextResponse.json({ message: "Service créé avec succès", serviceId: newService.id }, { status: 201 });
-    } catch (error: any) {
+    } catch (error) {
         console.error('Error creating service:', error);
-        return NextResponse.json({ error: 'Internal Server Error', details: error.message }, { status: 500 });
+        return NextResponse.json({ error: 'Internal Server Error', details: error instanceof Error ? error.message : 'Unknown error' }, { status: 500 });
     }
 }
 
@@ -29,7 +29,7 @@ export async function GET() {
     try {
         const { services, salonName } = await ServiceService.getServicesForSalon();
         return NextResponse.json({ services, salonName }, { status: 200 });
-    } catch (error: any) {
+    } catch (error) {
         console.error('Error fetching services:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
@@ -37,16 +37,14 @@ export async function GET() {
 
 export async function DELETE(request: Request) {
     try {
-        const { serviceId } = await request.json();
+        const { serviceId } = await request.json() as { serviceId?: string };
         if (!serviceId) {
             return NextResponse.json({ message: "ID du service manquant" }, { status: 400 });
         }
         await ServiceService.deleteService(serviceId);
         return NextResponse.json({ message: 'Service supprimé avec succès' }, { status: 200 });
-    } catch (error: any) {
+    } catch (error) {
         console.error('Error deleting service:', error);
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }
-
-

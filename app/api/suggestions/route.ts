@@ -10,17 +10,15 @@ export async function POST(req: Request) {
   }
 
   try {
-    const body = await req.json();
+    const body: { content?: string } = await req.json();
     const { content } = body;
     const suggestion = await NotificationService.createSuggestion(user.email, content);
     return NextResponse.json({ suggestion }, { status: 201 });
-  } catch (error: any) {
-    if (error.name === 'ZodError') {
-        return NextResponse.json({ error: error.errors }, { status: 400 });
+  } catch (error) {
+    if (error instanceof Error && error.name === 'ZodError') {
+        return NextResponse.json({ error: (error as { errors: unknown }).errors }, { status: 400 });
     }
     console.error('Suggestion error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
-
-

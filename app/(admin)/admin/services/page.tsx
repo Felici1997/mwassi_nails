@@ -5,11 +5,20 @@ import Notification from '@/app/components/Notification'
 import { Trash2, Edit3, Save, X, PlusCircle, Search } from 'lucide-react'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 
+interface ServiceItem {
+    id: string;
+    name: string;
+    price: number;
+    duration: number;
+    category?: string;
+    description?: string;
+}
+
 const ManageServices = () => {
     useKindeBrowserClient()
-    const [services, setServices] = useState<any[]>([])
+    const [services, setServices] = useState<ServiceItem[]>([])
     const [loading, setLoading] = useState(true)
-    const [editingService, setEditingService] = useState<any>(null)
+    const [editingService, setEditingService] = useState<ServiceItem | null>(null)
     const [notification, setNotification] = useState('')
     const [searchQuery, setSearchQuery] = useState('')
     

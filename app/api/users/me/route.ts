@@ -14,6 +14,7 @@ export async function GET() {
         const dbUser = await UserService.getUserByEmail(user.email);
 
         return NextResponse.json({ 
+            isAuthenticated: true,
             role: dbUser?.role || 'USER', 
             email: user.email,
             profile: dbUser,

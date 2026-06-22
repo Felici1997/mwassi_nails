@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import Wrapper from '@/app/components/Wrapper'
 import Notification from '@/app/components/Notification'
-import { Calendar, Clock, User, Trash2, Edit3, CheckCircle2, Clock4, Search, X, Save, ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
+import { Calendar, Clock, User, Trash2, Edit3, CheckCircle2, Clock4, Search, X, Save, ChevronLeft, ChevronRight, FileText } from 'lucide-react'
 import dayjs from 'dayjs'
 
 interface Appointment {
@@ -14,6 +15,8 @@ interface Appointment {
   startTime: string;
   endTime: string;
   status: string;
+  notes?: string;
+  imageUrl?: string;
 }
 
 interface Service {
@@ -45,7 +48,7 @@ const AdminAppointments = () => {
 
     // State for editing
     const [editingAppointment, setEditingAppointment] = useState<Appointment | null>(null)
-    const [editFormData, setEditFormData] = useState<any>({})
+    const [editFormData, setEditFormData] = useState<Record<string, unknown>>({})
 
     const closeNotification = () => setNotification("")
 
@@ -69,9 +72,9 @@ const AdminAppointments = () => {
             setServices(serData.services || [])
             setStaff(stfData.staff || [])
             setLoading(false)
-        } catch (error: any) {
+        } catch (error) {
             console.error(error)
-            setNotification(error.message || 'Erreur lors du chargement des données')
+            setNotification(error instanceof Error ? error.message : 'Erreur lors du chargement des données')
             setLoading(false)
         }
     }
@@ -260,6 +263,15 @@ const AdminAppointments = () => {
                     <User className='w-4 h-4' /> {app.staff?.name || 'Non assigné'}
                 </div>
 
+                {app.notes && (
+                    <p className='text-xs text-base-content/60 italic mt-2 flex items-center gap-1'>
+                        <FileText className='w-3 h-3' /> {app.notes}
+                    </p>
+                )}
+                {app.imageUrl && (
+                    <Image src={app.imageUrl} alt='Photo du service' width={80} height={80} className='rounded mt-2 object-cover w-20 h-20' />
+                )}
+
                 {!isPast && (
                     <div className='flex flex-wrap gap-2 pt-3 mt-3 border-t border-base-200'>
                         <button
@@ -326,7 +338,7 @@ const AdminAppointments = () => {
                             onClick={() => { setCurrentMonth(dayjs()); setSelectedDate(dayjs()) }}
                             className='text-xs text-primary hover:underline'
                         >
-                            Aujourd'hui
+                            Aujourd&apos;hui
                         </button>
                     </div>
                     <button

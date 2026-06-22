@@ -224,7 +224,7 @@ const ManageStaff = () => {
               <h3 className='font-bold text-lg mb-4'>Ajouter un nouveau membre</h3>
               <form onSubmit={handleCreate} className='flex flex-col gap-4'>
                 <div className='form-control'>
-                  <label className='label'>Nom d'affichage</label>
+                  <label className='label'>Nom d&apos;affichage</label>
                   <input 
                     className='input input-bordered' 
                     value={newStaff.name} 
@@ -264,7 +264,7 @@ const ManageStaff = () => {
               <h3 className='font-bold text-lg mb-4'>Modifier le membre</h3>
               <form onSubmit={handleUpdate} className='flex flex-col gap-4'>
                 <div className='form-control'>
-                  <label className='label'>Nom d'affichage</label>
+                  <label className='label'>Nom d&apos;affichage</label>
                   <input 
                     className='input input-bordered' 
                     value={editingStaff.name} 

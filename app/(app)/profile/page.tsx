@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
+import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs';
 import { User, Phone, Calendar, Briefcase, MessageSquare, Lock } from 'lucide-react';
 
 export default function ProfilePage() {
+  const { user } = useKindeBrowserClient();
   const [loading, setLoading] = useState(true);
   const [profile, setProfile] = useState({
     fullName: '',
@@ -46,7 +48,7 @@ export default function ProfilePage() {
        const res = await fetch('/api/users/profile', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(profile),
+        body: JSON.stringify({ ...profile, email: user?.email }),
       });
       
       const data = await res.json();
@@ -57,8 +59,8 @@ export default function ProfilePage() {
       
       toast.success('Profil mis à jour !');
       setIsEditing(false);
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Erreur inconnue');
     }
   };
 
@@ -74,8 +76,8 @@ export default function ProfilePage() {
       if (!res.ok) throw new Error('Failed to send suggestion');
       toast.success('Suggestion sent!');
       setSuggestion('');
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Erreur inconnue');
     } finally {
       setSuggesting(false);
     }
@@ -190,7 +192,7 @@ export default function ProfilePage() {
           <div className="card bg-base-200 shadow-md border border-base-300">
             <div className="card-body p-6">
               <h2 className="card-title text-lg mb-2">Sécurité</h2>
-              <p className="text-sm text-base-content/70 mb-4">Gérez votre mot de passe et vos paramètres d'authentification.</p>
+              <p className="text-sm text-base-content/70 mb-4">Gérez votre mot de passe et vos paramètres d&apos;authentification.</p>
               <a 
                 href="https://app.kinde.com/profile" 
                 target="_blank" 

@@ -8,10 +8,8 @@ export async function GET(request: Request) {
  
         const stats = await SalonService.getAdminStats(salonId);
         return NextResponse.json(stats, { status: 200 });
-    } catch (error: any) {
+    } catch (error) {
         console.error('Error fetching admin stats:', error);
-        return NextResponse.json({ error: 'Internal Server Error', details: error.message }, { status: 500 });
+        return NextResponse.json({ error: 'Internal Server Error', details: error instanceof Error ? error.message : 'Unknown error' }, { status: 500 });
     }
 }
-
-

@@ -88,8 +88,10 @@ export const AppointmentService = {
         staffId: string;
         appointmentDate: string;
         timeSlots: string[];
+        notes?: string;
+        imageUrl?: string;
     }) {
-        const { email, serviceId, staffId, appointmentDate, timeSlots } = data;
+        const { email, serviceId, staffId, appointmentDate, timeSlots, notes, imageUrl } = data;
 
         const service = await prisma.service.findUnique({ where: { id: serviceId } });
         if (!service) throw new Error('Service introuvable.');
@@ -135,7 +137,9 @@ export const AppointmentService = {
                         startTime,
                         endTime,
                         postNumber: assignedPost,
-                        status: 'PENDING'
+                        status: 'PENDING',
+                        notes: notes || null,
+                        imageUrl: imageUrl || null,
                     }
                 });
             })

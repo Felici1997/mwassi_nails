@@ -66,11 +66,11 @@ const AdminDashboard = () => {
                                 <p className='text-2xl font-bold'>{stats?.totalServices ?? 0}</p>
                             </div>
                             <div className='p-4 bg-white rounded-xl shadow-sm'>
-                                <p className='text-gray-500 text-sm'>RDV Aujourd'hui</p>
+                                <p className='text-gray-500 text-sm'>RDV Aujourd&apos;hui</p>
                                 <p className='text-2xl font-bold'>{stats?.appointmentsToday ?? 0}</p>
                             </div>
                             <div className='p-4 bg-white rounded-xl shadow-sm'>
-                                <p className='text-gray-500 text-sm'>Chiffre d'affaires estimé</p>
+                                <p className='text-gray-500 text-sm'>Chiffre d&apos;affaires estimé</p>
                                 <p className='text-2xl font-bold'>{stats?.totalRevenue?.toLocaleString() ?? 0} Fcfa</p>
                             </div>
                         </div>

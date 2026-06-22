@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import Wrapper from '@/app/components/Wrapper'
 import Notification from '@/app/components/Notification'
-import { Calendar, CheckCircle2, Clock4, Edit3, Trash2, X, Save } from 'lucide-react'
+import Image from 'next/image'
+import { Calendar, CheckCircle2, Clock4, Trash2, FileText } from 'lucide-react'
 import { useKindeBrowserClient } from '@kinde-oss/kinde-auth-nextjs'
 
 interface Appointment {
@@ -13,6 +14,8 @@ interface Appointment {
   endTime: string;
   status: string;
   rejectionNote?: string;
+  notes?: string;
+  imageUrl?: string;
 }
 
 const MyAppointments = () => {
@@ -21,15 +24,6 @@ const MyAppointments = () => {
   const [loading, setLoading] = useState(true)
   const [notification, setNotification] = useState('')
   const closeNotification = () => setNotification("")
-
-  // State for editing
-  const [isEditing, setIsEditing] = useState(false)
-  const [editingAppointment, setEditingAppointment] = useState<Appointment | null>(null)
-  const [editFormData, setEditFormData] = useState({
-    appointmentDate: '',
-    startTime: '',
-    endTime: ''
-  })
 
   const fetchMyAppointments = async () => {
     if (!user?.email) return
@@ -48,6 +42,9 @@ const MyAppointments = () => {
 
   useEffect(() => {
     fetchMyAppointments()
+    const interval = setInterval(fetchMyAppointments, 30000)
+    return () => clearInterval(interval)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.email])
 
   const handleCancel = async (id: string) => {
@@ -65,44 +62,6 @@ const MyAppointments = () => {
         fetchMyAppointments()
       } else {
         setNotification('Erreur lors de l\'annulation.')
-      }
-    } catch {
-      setNotification('Erreur serveur.')
-    }
-  }
-
-  const openEditModal = (app: Appointment) => {
-    setEditingAppointment(app)
-    setEditFormData({
-      appointmentDate: app.appointmentDate,
-      startTime: app.startTime,
-      endTime: app.endTime
-    })
-    setIsEditing(true)
-  }
-
-  const handleUpdate = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!editingAppointment) return
-
-    try {
-      const response = await fetch('/api/appointments', {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          id: editingAppointment.id,
-          ...editFormData
-        })
-      })
-
-      if (response.ok) {
-        setNotification('Rendez-vous mis à jour.')
-        setIsEditing(false)
-        setEditingAppointment(null)
-        fetchMyAppointments()
-      } else {
-        const errorData = await response.json()
-        setNotification(errorData.message || 'Erreur lors de la mise à jour.')
       }
     } catch {
       setNotification('Erreur serveur.')
@@ -152,6 +111,14 @@ const MyAppointments = () => {
             {app.status === 'REJECTED' && app.rejectionNote && (
               <p className='text-xs text-error italic mt-1'>Note: {app.rejectionNote}</p>
             )}
+            {app.notes && (
+              <p className='text-xs text-base-content/60 italic mt-1 flex items-center gap-1'>
+                <FileText className='w-3 h-3' /> {app.notes}
+              </p>
+            )}
+            {app.imageUrl && (
+              <Image src={app.imageUrl} alt='Photo du service' width={80} height={80} className='rounded mt-2 object-cover w-20 h-20' />
+            )}
           </div>
         </div>
         <div className='flex items-center gap-6'>
@@ -160,13 +127,6 @@ const MyAppointments = () => {
           </div>
           {!isPast && (
             <div className='flex gap-2'>
-              <button 
-                onClick={() => openEditModal(app)} 
-                disabled={disabled}
-                className='btn btn-ghost btn-sm text-primary disabled:text-gray-400'
-              >
-                <Edit3 className='w-4' />
-              </button>
               <button 
                 onClick={() => handleCancel(app.id)} 
                 disabled={disabled}
@@ -227,56 +187,10 @@ const MyAppointments = () => {
         ) : (
           <div className='text-center py-20 bg-base-200 rounded-2xl'>
             <Calendar className='w-12 h-12 mx-auto text-gray-400 mb-4' />
-            <p className='text-gray-500'>Vous n'avez aucun rendez-vous prévu.</p>
+            <p className='text-gray-500'>Vous n&apos;avez aucun rendez-vous prévu.</p>
           </div>
         )}
 
-        {/* Edit Modal */}
-        {isEditing && editingAppointment && (
-          <div className='modal modal-open'>
-            <div className='modal-box'>
-              <h3 className='font-bold text-lg mb-4'>Modifier le rendez-vous</h3>
-              <form onSubmit={handleUpdate} className='flex flex-col gap-4'>
-                <div className='form-control'>
-                  <label className='label'>Date</label>
-                  <input 
-                    type="date"
-                    className='input input-bordered' 
-                    value={editFormData.appointmentDate}
-                    onChange={e => setEditFormData({...editFormData, appointmentDate: e.target.value})}
-                    required
-                  />
-                </div>
-                <div className='flex gap-2'>
-                  <div className='form-control flex-1'>
-                    <label className='label'>Début</label>
-                    <input 
-                      type="time"
-                      className='input input-bordered' 
-                      value={editFormData.startTime}
-                      onChange={e => setEditFormData({...editFormData, startTime: e.target.value})}
-                      required
-                    />
-                  </div>
-                  <div className='form-control flex-1'>
-                    <label className='label'>Fin</label>
-                    <input 
-                      type="time"
-                      className='input input-bordered' 
-                      value={editFormData.endTime}
-                      onChange={e => setEditFormData({...editFormData, endTime: e.target.value})}
-                      required
-                    />
-                  </div>
-                </div>
-                <div className='modal-action'>
-                  <button type='button' className='btn' onClick={() => setIsEditing(false)}><X className='w-4' /> Annuler</button>
-                  <button type='submit' className='btn btn-secondary'><Save className='w-4' /> Enregistrer</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
       </div>
     </Wrapper>
   )

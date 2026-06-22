@@ -7,6 +7,7 @@ import { toast } from 'react-hot-toast';
 export default function OnboardingModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [userEmail, setUserEmail] = useState('');
   const [formData, setFormData] = useState({
     fullName: '',
     phone1: '',
@@ -23,6 +24,7 @@ export default function OnboardingModal() {
         const data = await res.json();
         if (data.isAuthenticated && !data.isProfileComplete) {
           setIsOpen(true);
+          setUserEmail(data.email || '');
           if (data.profile) {
             setFormData({
               fullName: data.profile.fullName || '',
@@ -54,24 +56,28 @@ export default function OnboardingModal() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!userEmail || !userEmail.includes('@')) {
+      toast.error('Erreur de session, veuillez rafraîchir la page');
+      return;
+    }
     setLoading(true);
     try {
        const res = await fetch('/api/users/profile', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, email: userEmail }),
       });
 
       if (!res.ok) {
         const errorData = await res.json();
-        throw new Error(errorData.error?.[0]?.message || 'Failed to update profile');
+        throw new Error(errorData.error || 'Erreur de mise à jour du profil');
       }
 
       toast.success('Profil mis à jour !');
       setIsOpen(false);
       router.refresh();
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Erreur inconnue');
     } finally {
       setLoading(false);
     }

@@ -20,7 +20,7 @@ export default function Home() {
               <span>Nail<span className="text-secondary">Book</span></span>
             </h1>
             <h2 className="py-4 md:py-6 text-xl md:text-4xl font-semibold">
-              Gérer la réservation de vos <span className="text-secondary">services d'onglerie</span> simplement.
+              Gérer la réservation de vos <span className="text-secondary">services d&apos;onglerie</span> simplement.
             </h2>
 
             <ul className="steps steps-vertical lg:steps-horizontal">
@@ -37,7 +37,7 @@ export default function Home() {
 
             <div className="mt-6 flex justify-center">
               <LoginLink className="btn btn-secondary">Se connecter</LoginLink>
-              <RegisterLink className="btn btn-secondary btn-outline ml-4">S'inscrire</RegisterLink>
+              <RegisterLink className="btn btn-secondary btn-outline ml-4">S&apos;inscrire</RegisterLink>
             </div>
           </div>
         </div>
